@@ -24,9 +24,17 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SocialShare1 } from "../tools/Social";
 
+// ✅ 1) Strong type for menu items (children optional)
+type NavItem = {
+  id: number;
+  name: string;
+  path: string;
+  children?: NavItem[];
+};
 
 const SideNavModal = () => {
-  const SideMenuData = navigation.header;
+  // ✅ 2) Tell TS what the data is
+  const SideMenuData = navigation.header as NavItem[];
   const { footer_info, social } = siteConfig;
 
   return (
@@ -59,17 +67,12 @@ const SideNavModal = () => {
                   <div className="offcanvas-3__meta top-0 relative mb-[60px] md:mb-[90px] lg:mb-[100px] xl:mb-[145px] opacity-100  uppercase text-text-fixed-2 ">
                     <ul>
                       <li className="mb-[19px]">
-                        <a
-                          href={`tel:${footer_info?.mobile}`}
-                          className="underline"
-                        >
+                        <a href={`tel:${footer_info?.mobile}`} className="underline">
                           <u>{footer_info?.mobile}</u>
                         </a>
                       </li>
                       <li className="text-[18px] leading-[20px] mb-[19px]">
-                        <a href={`mailto:${footer_info?.email}`}>
-                          {footer_info?.email}
-                        </a>
+                        <a href={`mailto:${footer_info?.email}`}>{footer_info?.email}</a>
                       </li>
                       <li>
                         <a href={footer_info?.address?.link} target="_blank">
@@ -83,7 +86,7 @@ const SideNavModal = () => {
                       Follow Me
                     </p>
                     <div className="offcanvas-3__social-links flex gap-[20px] text-[18px] text-text-fixed-2">
-                      {social.map((item, i) => (
+                      {social?.map((item: any, i: number) => (
                         <React.Fragment key={`social_share-${i}`}>
                           {SocialShare1(item)}
                         </React.Fragment>
@@ -92,13 +95,16 @@ const SideNavModal = () => {
                   </div>
                 </div>
               </div>
+
               <div className="offcanvas-3__menu-wrapper flex items-end overflow-y-hidden">
                 <nav className="nav-menu offcanvas-3__menu relative w-full h-full overflow-x-hidden text-secondary-2 lg:text-text-3">
                   <ScrollArea className="h-full scrollbar-none">
                     <Accordion type="single" collapsible className="w-full">
                       <div className="absolute left-[8px] top-0 w-[1px] h-full bg-[#333337] hidden md:block"></div>
-                      {SideMenuData.map((menuItem, i) =>
-                        menuItem.hasChildren ? (
+
+                      {/* ✅ 3) Properly typed map + children length checks */}
+                      {SideMenuData.map((menuItem: NavItem, i: number) =>
+                        menuItem.children?.length ? (
                           <AccordionItem
                             value={`item-${menuItem.name}`}
                             key={menuItem.id}
@@ -107,49 +113,38 @@ const SideNavModal = () => {
                             <AccordionTrigger
                               className={clsx(
                                 " text-[2.5vh] lg:text-[6vh] xl:text-[8vh] hover:text-text-fixed-2 md:pl-[58px] !leading-[0.9]",
-                                i !== SideMenuData.length - 1 &&
-                                  "mb-5 lg:mb-[26px]"
+                                i !== SideMenuData.length - 1 && "mb-5 lg:mb-[26px]"
                               )}
                             >
                               {menuItem.name}
                             </AccordionTrigger>
+
                             <AccordionContent className="flex flex-col pl-[20px]">
-                              {menuItem.children.map((submenu, k) =>
-                                submenu.hasChildren ? (
+                              {menuItem.children?.map((submenu: NavItem, k: number) =>
+                                submenu.children?.length ? (
                                   <Accordion
                                     type="single"
                                     collapsible
                                     key={`id-${submenu.id}`}
                                     className="md:pl-[58px]"
                                   >
-                                    <AccordionItem
-                                      value={`submenuChild-${submenu.id}`}
-                                      className="border-0"
-                                    >
-                                      <AccordionTrigger
-                                        className={clsx(
-                                          "text-[2.2vh] lg:text-[5.3vh] xl:text-[6.2vh] hover:text-text-fixed-2  mb-[20px] lg:mb-[26px]"
-                                        )}
-                                      >
+                                    <AccordionItem value={`submenuChild-${submenu.id}`} className="border-0">
+                                      <AccordionTrigger className="text-[2.2vh] lg:text-[5.3vh] xl:text-[6.2vh] hover:text-text-fixed-2  mb-[20px] lg:mb-[26px]">
                                         {submenu.name}
                                       </AccordionTrigger>
-                                      {submenu.children?.map(
-                                        (submenuChild, j) => (
-                                          <AccordionContent
-                                            className="flex flex-col"
-                                            key={submenuChild.id}
-                                          >
-                                            <DrawerClose asChild>
-                                              <Link
-                                                href={submenuChild.path}
-                                                className="text-[1.9vh] lg:text-[4.58vh] xl:text-[5.36vh] hover:text-text-fixed-2 pl-5 mb-[20px] lg:mb-[26px]"
-                                              >
-                                                {submenuChild.name}
-                                              </Link>
-                                            </DrawerClose>
-                                          </AccordionContent>
-                                        )
-                                      )}
+
+                                      {submenu.children?.map((submenuChild: NavItem, j: number) => (
+                                        <AccordionContent className="flex flex-col" key={submenuChild.id}>
+                                          <DrawerClose asChild>
+                                            <Link
+                                              href={submenuChild.path}
+                                              className="text-[1.9vh] lg:text-[4.58vh] xl:text-[5.36vh] hover:text-text-fixed-2 pl-5 mb-[20px] lg:mb-[26px]"
+                                            >
+                                              {submenuChild.name}
+                                            </Link>
+                                          </DrawerClose>
+                                        </AccordionContent>
+                                      ))}
                                     </AccordionItem>
                                   </Accordion>
                                 ) : (
@@ -171,8 +166,7 @@ const SideNavModal = () => {
                               href={menuItem.path}
                               className={clsx(
                                 " text-[2.5vh] lg:text-[6vh] xl:text-[8vh] inline-block hover:text-text-fixed-2 md:pl-[58px] !leading-[0.9]",
-                                i !== SideMenuData.length - 1 &&
-                                  "mb-5 lg:mb-[26px]"
+                                i !== SideMenuData.length - 1 && "mb-5 lg:mb-[26px]"
                               )}
                             >
                               {menuItem.name}
