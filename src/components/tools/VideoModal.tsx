@@ -45,8 +45,9 @@ const VideoModal = ({ link, isOpen, close }: Props) => {
         <ReactPlayer
           url={link}
           playing={true}
-          width={findVideoWidth(deviceWidth)}
-          height="auto"
+          //width={findVideoWidth(deviceWidth)}
+          width="550px"
+          height="500px"
           controls
         />
       </DialogContent>

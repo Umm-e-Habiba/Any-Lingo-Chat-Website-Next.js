@@ -3,30 +3,30 @@
     {
       "id": 1,
       "name": "Home",
-      "path": "/branding"
+      "path": "/"
       
     },
     {
       "id": 2,
       "name": "About",
-      "path": "#"
+      "path": "#about"
     },
     {
       "id": 3,
-      "name": "Products",
-      "path": "#"
+      "name": "Product",
+      "path": "#product"
     },
     {
       "id": 4,
       "name": "Features",
-      "path": "#"
+      "path": "#feature"
       
     },
     
     {
       "id": 6,
       "name": "Design Process",
-      "path": "/"
+      "path": "#process"
     }
   ],
   "footer1": [

@@ -27,9 +27,9 @@ const BrandingService = ({ title, info, action_btn, services }: Props) => {
     { scope: containerRef }
   );
   return (
-    <section
+    <section id="feature"
       ref={pinContent}
-      className="main-section-style bg-background-fixed"
+      className="scroll-mt-24 main-section-style bg-background-fixed"
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">

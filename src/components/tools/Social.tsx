@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaLinkedin,
   FaTwitter,
+  FaYoutube,
 } from "react-icons/fa6";
 
 // lib
@@ -23,7 +24,7 @@ export const SocialShare1 = (item: SocialType, className?: string) => {
     case "Fb":
       return (
         <Link
-          href={item.link}
+          href="https://www.facebook.com/profile.php?id=61571824100566"
           target="_blank"
           key={item.link}
           className={cn("relative z-10", className)}
@@ -34,18 +35,18 @@ export const SocialShare1 = (item: SocialType, className?: string) => {
     case "Tw":
       return (
         <Link
-          href={item.link}
+          href="https://www.youtube.com/@AnyLingo"
           target="_blank"
           key={item.link}
           className={cn("relative z-10", className)}
         >
-          <FaTwitter />
+          <FaYoutube />
         </Link>
       );
     case "In":
       return (
         <Link
-          href={item.link}
+          href="https://www.instagram.com/anylingoapp?igsh=MXBtNnRpeWk0aDMxaA=="
           target="_blank"
           key={item.link}
           className={cn("relative z-10", className)}
@@ -56,18 +57,7 @@ export const SocialShare1 = (item: SocialType, className?: string) => {
     case "Db":
       return (
         <Link
-          href={item.link}
-          target="_blank"
-          key={item.link}
-          className={cn("relative z-10", className)}
-        >
-          <FaDribbble />
-        </Link>
-      );
-    case "Li":
-      return (
-        <Link
-          href={item.link}
+          href="https://www.linkedin.com/company/anylingo/"
           target="_blank"
           key={item.link}
           className={cn("relative z-10", className)}
@@ -75,5 +65,6 @@ export const SocialShare1 = (item: SocialType, className?: string) => {
           <FaLinkedin />
         </Link>
       );
+    
   }
 };

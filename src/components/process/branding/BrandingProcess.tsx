@@ -41,9 +41,9 @@ const BrandingProcess = ({ title, shape, process_list }: Props) => {
   );
 
   return (
-    <section
+    <section id="process"
       ref={pinElement}
-      className="bg-[#D8E9E4] dark:bg-[#252525] main-section-style"
+      className="scroll-mt-24 bg-[#D8E9E4] dark:bg-[#252525] main-section-style"
     >
       <div ref={containerRef} className="container">
         <div className=" main-section-spacing relative">

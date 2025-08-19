@@ -5,6 +5,7 @@ import ButtonSwap from "@/components/elements/button/ButtonSwap";
 import { useDirection } from "@/context/app.context";
 import { ActionBtnType } from "@/types";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
+import Image from "next/image";
 
 type Props = {
   aboutData: {
@@ -58,8 +59,40 @@ const BranAboutArea = ({ aboutData }: Props) => {
                 link={aboutData.action_btn.link}
                 buttonText={aboutData.action_btn.label}
               />
+              
             </div>
           )}
+          <div className="flex items-center gap-4 mt-8">
+                {/* Apple Store Button */}
+                <a
+                  href="https://apps.apple.com/pk/app/any-lingo-chat/id6698850454"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/assets/imgs/brand/app-store.png"
+                    alt="Download on the App Store"
+                    width={160}
+                    height={48}
+                    className="h-auto w-[160px]"
+                  />
+                </a>
+
+                {/* Google Play Button */}
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.anylingo.chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/assets/imgs/brand/play-store.png"
+                    alt="Get it on Google Play"
+                    width={160}
+                    height={48}
+                    className="h-auto w-[160px]"
+                  />
+                </a>
+              </div>
         </div>
       </div>
     </div>

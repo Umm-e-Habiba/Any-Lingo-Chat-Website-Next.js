@@ -5,6 +5,7 @@ import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
+import "./styling.css";
 
 const Layout = ({
   children,

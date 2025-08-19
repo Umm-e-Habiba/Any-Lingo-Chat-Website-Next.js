@@ -35,9 +35,9 @@ const BrandingWork = ({
   );
 
   return (
-    <section
+    <section id="product" 
       ref={pinElement}
-      className="work-area section-item bg-background mb-[130px] mt-[-130px] rounded-[30px_30px_0_0] lg:rounded-[50px_50px_0_0] xl:rounded-[80px_80px_0_0] relative z-10 overflow-hidden "
+      className="scroll-mt-24 work-area section-item bg-background mb-[130px] mt-[-130px] rounded-[30px_30px_0_0] lg:rounded-[50px_50px_0_0] xl:rounded-[80px_80px_0_0] relative z-10 overflow-hidden "
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing">
