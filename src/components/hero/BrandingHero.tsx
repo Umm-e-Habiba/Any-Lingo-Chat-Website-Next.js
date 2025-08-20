@@ -186,7 +186,7 @@ const BrandingHero = ({
             <div className="has_fade_anim hidden lg:block " data-fade-from="right">
               <div className="relative mx-auto max-w-[520px] ">
                 <Image
-                  src="/assets/imgs/brand/5.png" // your phone/mock image
+                  src="/assets/imgs/brand/55.png" // your phone/mock image
                   alt="App preview"
                   width={520}
                   height={300}

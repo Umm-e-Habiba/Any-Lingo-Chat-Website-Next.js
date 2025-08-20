@@ -3,7 +3,7 @@ import BrandingHeader from "@/components/headers/BrandingHeader";
 import Footer1 from "@/components/footer/Footer1";
 import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
-import ToolsComponent from "@/components/tools";
+//import ToolsComponent from "@/components/tools";
 import ScrollTop from "@/components/tools/ScrollTop";
 import "./styling.css";
 
@@ -15,7 +15,7 @@ const Layout = ({
   return (
     <div className="instrument">
       <ScrollSmootherComponent />
-      <ToolsComponent />
+      
       <ScrollTop />
       <div id="smooth-wrapper">
         <div id="smooth-content">

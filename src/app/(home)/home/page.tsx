@@ -5,6 +5,7 @@ import BrandingWork from "@/components/work/branding/BrandingWork";
 import BrandingFunFact from "@/components/funFact/branding/BrandingFunFact";
 import BrandingService from "@/components/service/branding/BrandingService";
 import BrandingProcess from "@/components/process/branding/BrandingProcess";
+import BrandingIntro from "@/components/process/branding/BrandingIntro";
 import BrandingImage from "@/components/image/BrandingImage";
 
 import Cta1 from "@/components/cta/Cta1";
@@ -38,6 +39,7 @@ const Branding = () => {
       />
       <RefreshGsap />
       <BrandingHero {...hero} />
+      <BrandingIntro {...process} />
       <BrandingWork works={works} {...work} />
       <BrandingFunFact {...funFact} />
       <BrandingService services={services} {...service} />

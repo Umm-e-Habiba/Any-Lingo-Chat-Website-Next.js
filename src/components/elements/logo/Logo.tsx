@@ -50,8 +50,9 @@ const Logo = ({
             alt={title}
             priority
             style={{
-              height: customHeight || logo_height + "px",
-              width: customWidth || logo_width + "px",
+              height: "110px",
+              width: "120px",
+              marginTop:"15px",
             }}
             className={cn("", className)}
           />
