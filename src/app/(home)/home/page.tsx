@@ -40,13 +40,14 @@ const Branding = () => {
       <RefreshGsap />
       <BrandingHero {...hero} />
       <BrandingIntro {...process} />
-      
+      <BrandingService services={services} {...service} />
+      <BrandingFunFact {...funFact} />
       <BrandingScreenShot
         title="App Screenshots"
         description="Any Lingo — Chat and translate with real-time,
-bi-directional messaging in any language. Stay
-connected worldwide with instant translations,
-secure chats, and voice cloning."
+                      bi-directional messaging in any language. Stay
+                      connected worldwide with instant translations,
+                      secure chats, and voice cloning."
         action_btn={{ label: "Download Now", link: "/download" }}
         works={[
           { id: 1, image: "/assets/imgs/screenshots/img1.png" },
@@ -60,8 +61,8 @@ secure chats, and voice cloning."
           { id: 9, image: "/assets/imgs/screenshots/img2.png" },
         ]}
       />
-      <BrandingFunFact {...funFact} />
-      <BrandingService services={services} {...service} />
+      
+      
       <BrandingProcess {...process} />
       <BrandingImage {...image} />
       
