@@ -1,7 +1,7 @@
 import { getMainPage, getAllPages } from "@/lib/helper/contentConverter";
 
 import BrandingHero from "@/components/hero/BrandingHero";
-import BrandingWork from "@/components/work/branding/BrandingWork";
+import BrandingScreenShot from "@/components/work/branding/BrandingScreenShot";
 import BrandingFunFact from "@/components/funFact/branding/BrandingFunFact";
 import BrandingService from "@/components/service/branding/BrandingService";
 import BrandingProcess from "@/components/process/branding/BrandingProcess";
@@ -40,7 +40,26 @@ const Branding = () => {
       <RefreshGsap />
       <BrandingHero {...hero} />
       <BrandingIntro {...process} />
-      <BrandingWork works={works} {...work} />
+      
+      <BrandingScreenShot
+        title="App Screenshots"
+        description="Any Lingo — Chat and translate with real-time,
+bi-directional messaging in any language. Stay
+connected worldwide with instant translations,
+secure chats, and voice cloning."
+        action_btn={{ label: "Download Now", link: "/download" }}
+        works={[
+          { id: 1, image: "/assets/imgs/screenshots/img1.png" },
+          { id: 2, image: "/assets/imgs/screenshots/img2.png" },
+          { id: 3, image: "/assets/imgs/screenshots/img3.png" },
+          { id: 4, image: "/assets/imgs/screenshots/img4.png" },
+          { id: 5, image: "/assets/imgs/screenshots/img5.png" },
+          { id: 6, image: "/assets/imgs/screenshots/img6.png" },
+          { id: 7, image: "/assets/imgs/screenshots/img5.png" },
+          { id: 8, image: "/assets/imgs/screenshots/img3.png" },
+          { id: 9, image: "/assets/imgs/screenshots/img2.png" },
+        ]}
+      />
       <BrandingFunFact {...funFact} />
       <BrandingService services={services} {...service} />
       <BrandingProcess {...process} />
