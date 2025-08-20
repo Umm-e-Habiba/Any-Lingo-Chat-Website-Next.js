@@ -50,15 +50,15 @@ const Branding = () => {
                       secure chats, and voice cloning."
         action_btn={{ label: "Download Now", link: "/download" }}
         works={[
-          { id: 1, image: "/assets/imgs/screenshots/img1.png" },
-          { id: 2, image: "/assets/imgs/screenshots/img2.png" },
-          { id: 3, image: "/assets/imgs/screenshots/img3.png" },
-          { id: 4, image: "/assets/imgs/screenshots/img4.png" },
-          { id: 5, image: "/assets/imgs/screenshots/img5.png" },
-          { id: 6, image: "/assets/imgs/screenshots/img6.png" },
-          { id: 7, image: "/assets/imgs/screenshots/img5.png" },
-          { id: 8, image: "/assets/imgs/screenshots/img3.png" },
-          { id: 9, image: "/assets/imgs/screenshots/img2.png" },
+          { id: 1, image: "/assets/imgs/brand/screenshots/img1.png" },
+          { id: 2, image: "/assets/imgs/brand/screenshots/img2.png" },
+          { id: 3, image: "/assets/imgs/brand/screenshots/img3.png" },
+          { id: 4, image: "/assets/imgs/brand/screenshots/img4.png" },
+          { id: 5, image: "/assets/imgs/brand/screenshots/img5.png" },
+          { id: 6, image: "/assets/imgs/brand/screenshots/img6.png" },
+          { id: 7, image: "/assets/imgs/brand/screenshots/img5.png" },
+          { id: 8, image: "/assets/imgs/brand/screenshots/img3.png" },
+          { id: 9, image: "/assets/imgs/brand/screenshots/img2.png" },
         ]}
       />
       
