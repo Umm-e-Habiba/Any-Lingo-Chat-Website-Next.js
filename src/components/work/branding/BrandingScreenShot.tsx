@@ -58,7 +58,7 @@ const BrandingScreenShot = ({ works, title, description, action_btn }: TBranding
               <div className="absolute top-1/2 left-1/2 w-[350px] h-[525px] 
                               -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
                 <Image
-                  src="/assets/imgs/screenshots/mockup6.png"
+                  src="/assets/imgs/brand/screenshots/mockup6.png"
                   alt="phone frame"
                   fill
                   className="object-contain"
