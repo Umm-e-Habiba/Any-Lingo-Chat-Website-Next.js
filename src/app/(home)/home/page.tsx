@@ -51,7 +51,7 @@ const Branding = () => {
         action_btn={{ label: "Download Now", link: "/download" }}
         works={[
           
-          { id: 6, image: "/assets/imgs/brand/screenshots/img6.png" },
+          { id: 6, image: "/assets/imgs/brand/screenshots/img1.png" },
           { id: 7, image: "/assets/imgs/brand/screenshots/img5.png" },
           { id: 8, image: "/assets/imgs/brand/screenshots/img3.png" },
           { id: 9, image: "/assets/imgs/brand/screenshots/img2.png" },
