@@ -51,15 +51,15 @@ const Branding = () => {
         action_btn={{ label: "Download Now", link: "/download" }}
         works={[
           
-          { id: 6, image: "/assets/imgs/brand/screenshots/img1.png" },
-          { id: 7, image: "/assets/imgs/brand/screenshots/img5.png" },
-          { id: 8, image: "/assets/imgs/brand/screenshots/img3.png" },
-          { id: 9, image: "/assets/imgs/brand/screenshots/img2.png" },
-          { id: 1, image: "/assets/imgs/brand/screenshots/img1.png" },
-          { id: 2, image: "/assets/imgs/brand/screenshots/img2.png" },
-          { id: 3, image: "/assets/imgs/brand/screenshots/img3.png" },
-          { id: 4, image: "/assets/imgs/brand/screenshots/img4.png" },
-          { id: 5, image: "/assets/imgs/brand/screenshots/img5.png" },
+          { id: 6, image: "/assets/imgs/brand/screenshots/img1.PNG" },
+          { id: 7, image: "/assets/imgs/brand/screenshots/img5.PNG" },
+          { id: 8, image: "/assets/imgs/brand/screenshots/img3.PNG" },
+          { id: 9, image: "/assets/imgs/brand/screenshots/img2.PNG" },
+          { id: 1, image: "/assets/imgs/brand/screenshots/img1.PNG" },
+          { id: 2, image: "/assets/imgs/brand/screenshots/img2.PNG" },
+          { id: 3, image: "/assets/imgs/brand/screenshots/img3.PNG" },
+          { id: 4, image: "/assets/imgs/brand/screenshots/img4.PNG" },
+          { id: 5, image: "/assets/imgs/brand/screenshots/img5.PNG" },
         ]}
       />
       
