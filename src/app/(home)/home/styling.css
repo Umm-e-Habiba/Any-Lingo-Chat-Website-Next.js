@@ -1,0 +1,6 @@
+html { scroll-behavior: auto; }
+/* globals.css (or your custom CSS file) */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #22c55e !important; /* Tailwind's green-500 */
+}
