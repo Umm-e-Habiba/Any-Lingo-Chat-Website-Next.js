@@ -5,8 +5,7 @@ import hasPinContent from "@/lib/animation/hasPinContent";
 import hasImageReveal from "@/lib/animation/hasImageReveal";
 import hasCountAnim from "@/lib/animation/hasCountAnim";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import ImageComponent from "@/components/tools/ImageComponent";
-import MainSectionTitle from "@/components/sectionTitle/MainSectionTitle";
+import Image from "next/image";
 
 type Props = {
   title: string;
@@ -32,29 +31,34 @@ const BrandingFunFact = ({ title, shape1, shape2, value }: Props) => {
   return (
     <section
       ref={pinElement}
-      className="main-section-style bg-[#d9dced] dark:bg-[#252525]"
+      className="relative py-32 lg:py-48 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 overflow-hidden"
     >
       <div ref={containerRef} className="container">
-        <div className="main-section-spacing">
-          <MainSectionTitle title={title} className="max-w-[840px]" />
-          <div className="mt-[50px] xl:mt-[90px]">
-            <div className="ms-auto overflow-hidden max-w-[1310px] flex items-center gap-[50px] sm:gap-[80px] md:gap-[120px] xl:gap-[220px]">
-              <div className="has_image_reveal">
-                <ImageComponent
-                  className="shape-1 h-[135px] sm:h-[215px] md:h-[265px] lg:h-[315px] xl:h-[415px] 2xl:h-[515px] w-auto"
-                  src={shape1}
-                  darkSrc={shape2}
-                  width={266}
-                  height={515}
-                  alt="image"
-                />
-              </div>
-              <p
-                data-count={value}
-                className="has_count_anim text-[120px] sm:text-[170px] md:text-[200px] lg:text-[250px] xl:text-[350px] 2xl:text-[450px]"
-              >
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center justify-center">
+          {/* Left: Content - Centered */}
+          <div className="max-w-2xl text-center flex-1">
+            <div className="text-9xl lg:text-10xl font-bold text-white mb-12">
+              <span data-count={value} className="has_count_anim">
                 {value}
-              </p>
+              </span>
+            </div>
+            <p className="text-white text-2xl lg:text-4xl font-medium leading-relaxed">
+              Breaking barriers isn't easy, yet AnyLingo has delivered seamless translation in over 70 languages.
+            </p>
+          </div>
+
+          {/* Right: Mobile Phone Mockup - Full Size */}
+          <div className="flex justify-center lg:justify-end flex-1">
+            <div className="relative w-full h-full flex items-center justify-end">
+              <Image
+                src="/assets/imgs/brand/Pre-comp 7_00240 1.png"
+                alt="AnyLingo app features"
+                width={1920}
+                height={2624}
+                className="w-full max-w-full h-auto drop-shadow-2xl"
+                priority
+                unoptimized
+              />
             </div>
           </div>
         </div>

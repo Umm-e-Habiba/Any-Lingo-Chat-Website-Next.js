@@ -19,7 +19,7 @@ const Footer1 = ({ footerNav }: Props) => {
 
   return (
     <div className="inner-container large">
-      <footer className="footer_area bg-[#f3faf1] px-[15px] lg:px-[45px]">
+      <footer className="footer_area bg-[#ebffec] px-[15px] lg:px-[45px]">
         <div className="inner-container">
           <div className="footer_area_inner grid gap-y-[30px] gap-x-[30px] justify-between overflow-hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 py-[40px]">
             {/* Left: logo + contact + brand text */}

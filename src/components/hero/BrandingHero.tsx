@@ -39,28 +39,15 @@ const BrandingHero = ({
 
   return (
     <section id="about" ref={pinElement} className="hero-area z-10 pb-[130px] relative">
-      {/* Custom gradient background with lighting effects */}
+      {/* Hero background image */}
       <div className="absolute w-full h-full -z-10 top-0 start-0 overflow-hidden">
-        {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#7ED957] via-[#4CAF50] to-[#388E3C]" />
-        
-        {/* Diagonal light streak effect */}
-        <div className="absolute -top-1/2 left-0 w-[200%] h-[200%] bg-gradient-to-br from-white/20 via-transparent to-transparent rotate-12 transform -translate-x-1/4" />
-        
-        {/* Radial light effect top */}
-        <div className="absolute -top-1/4 left-1/4 w-full h-full bg-radial-gradient from-white/10 via-transparent to-transparent" />
-        
-        {/* Additional subtle glow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-white/5 to-transparent" />
-      </div>
-      
-      {/* Dotted pattern overlay */}
-      <div className="absolute right-0 top-0 w-48 h-48 opacity-30">
-        <div className="grid grid-cols-8 gap-2">
-          {[...Array(64)].map((_, i) => (
-            <div key={i} className="w-1 h-1 bg-white rounded-full"></div>
-          ))}
-        </div>
+        <Image
+          src="/assets/imgs/hero/branding/BG.png"
+          alt="hero background"
+          fill
+          className="object-cover"
+          priority
+        />
       </div>
 
       <div className="container">
@@ -197,30 +184,7 @@ const BrandingHero = ({
               {/* removed earlier 'Supports More Than' line to match design */}
             </div>
 
-            {/* RIGHT: phone chat mockup (replaces static image) */}
-            <div className="has_fade_anim hidden lg:flex justify-end" data-fade-from="right">
-              <div className="relative mx-auto w-[260px] sm:w-[320px] md:w-[420px] h-[520px] md:h-[820px]">
-                {/* Phone frame */}
-                <div className="absolute inset-0 rounded-[36px] bg-black shadow-2xl flex items-center justify-center p-4">
-                  {/* Screen (splash) */}
-                  <div className="w-full h-full bg-white rounded-[22px] overflow-hidden flex flex-col">
-                    <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
-                      <Image src="/assets/imgs/hero/branding/lingo.png" alt="Any Lingo" width={120} height={120} className="mb-4" />
-                      <h3 className="text-2xl font-semibold text-gray-800">Any Lingo</h3>
-                      <p className="mt-3 text-sm text-gray-500 max-w-[220px]">Connecting people across any language</p>
-                    </div>
-
-                    <div className="flex flex-col items-center pb-6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="h-3 w-3 rounded-full bg-emerald-500 shadow-md"></span>
-                        <span className="h-2 w-2 rounded-full bg-emerald-200"></span>
-                      </div>
-                      <div className="text-[10px] text-gray-400">Version 1.6.27</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* RIGHT: removed — using hero background image instead (per design) */}
           </div>
           
         </div>

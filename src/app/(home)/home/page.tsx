@@ -61,8 +61,6 @@ const Branding = () => {
         ]}
       />
       
-      
-      <BrandingProcess {...process} />
       <BrandingImage {...image} />
       
       

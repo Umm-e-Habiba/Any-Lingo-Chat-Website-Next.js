@@ -127,7 +127,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
     <section
       id="Intro"
       ref={pinElement}
-      className="scroll-mt-24 bg-[#D8E9E4] dark:bg-[#252525] section-spacing-top section-spacing-bottom relative z-10"
+      className="scroll-mt-24 bg-[#ebffec] dark:bg-[#252525] section-spacing-top section-spacing-bottom relative z-10"
     >
       <div ref={containerRef} className="container">
         <div className=" main-section-spacing relative">
@@ -210,67 +210,18 @@ const BrandingIntro = ({ title, shape }: Props) => {
         </div>
       </div>
     </section>
-    {/* ====== NEW: Key Features (dipto copy) - inserted after WHY CHOOSE ====== */}
-    <section className="bg-emerald-50 text-emerald-900 py-16 lg:py-24">
-      <div className="container">
-        <div className="text-center relative">
-          {/* dipto pill behind title */}
-          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -top-6 z-0">
-            <div className="w-[280px] h-12 bg-emerald-100 rounded-l-full" aria-hidden />
-          </div>
-
-          <h3 className="font-instrument font-semibold text-[34px] lg:text-[40px] relative z-10">Our Key Features</h3>
-          <p className="max-w-3xl mx-auto mt-3 text-sm lg:text-base text-emerald-800/90">
-            Our Key Features Are Designed To Break Language Barriers And Make Communication Effortless. From Real-Time Translation To AI-Powered Chat And Voice Cloning, AnyLingo Gives You The Tools To Connect With Confidence - Anytime, Anywhere.
-          </p>
-        </div>
-
-        <div className="mt-10 lg:mt-14">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-            {/* Card 1 - highlighted */}
-            <div className="rounded-[14px] bg-emerald-800 text-white p-6 shadow-lg flex flex-col justify-start">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-emerald-600/80 flex items-center justify-center">
-                  <span className="text-white text-lg">◎</span>
-                </div>
-              </div>
-              <h4 className="mt-6 text-[18px] font-semibold leading-[1.2]">Bio-Directional Communication</h4>
-              <p className="mt-3 text-sm text-white/90">Enjoy Seamless Two-Way Conversations Without Barriers.</p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="rounded-[14px] bg-white border border-emerald-200 p-6 flex flex-col">
-              <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center">
-                <span className="text-emerald-700">◎</span>
-              </div>
-              <h4 className="mt-6 text-[18px] font-semibold text-emerald-900">Smooth Multilingual Conversations</h4>
-              <p className="mt-3 text-sm text-emerald-700">Communicate Effortlessly Across Multiple Languages.</p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="rounded-[14px] bg-white border border-emerald-200 p-6 flex flex-col">
-              <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center">
-                <span className="text-emerald-700">◎</span>
-              </div>
-              <h4 className="mt-6 text-[18px] font-semibold text-emerald-900">Instant Message Translation</h4>
-              <p className="mt-3 text-sm text-emerald-700">Get Fast, Accurate Translations Right As You Chat.</p>
-            </div>
-
-            {/* Card 4 */}
-            <div className="rounded-[14px] bg-white border border-emerald-200 p-6 flex flex-col">
-              <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center">
-                <span className="text-emerald-700">◎</span>
-              </div>
-              <h4 className="mt-6 text-[18px] font-semibold text-emerald-900">Voice Cloning & Audio Sharing</h4>
-              <p className="mt-3 text-sm text-emerald-700">Speak In Any Language Using Your Own Voice And Share It Instantly.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     
-  {/* ====== DUPLICATED 'WHY CHOOSE' SECTION (from image) ====== */}
-  <section className="bg-emerald-600 text-white py-16 lg:py-24 mt-20 lg:mt-28 relative z-0">
+  {/* ====== DUPLICATED 'WHY CHOOSE' SECTION (from image) - NOW APPEARS FIRST ====== */}
+  <section className="bg-emerald-600 text-white py-16 lg:py-24 mt-40 lg:mt-52 relative z-10 overflow-hidden">
+    {/* Background image */}
+    <div className="absolute inset-0 -z-10">
+      <Image
+        src="/assets/imgs/hero/branding/Rectangle 14.png"
+        alt="why choose background"
+        fill
+        className="object-cover"
+      />
+    </div>
       <div className="container">
         <div className="text-center mb-8 lg:mb-12">
           <h3 className="font-instrument font-semibold text-[34px] lg:text-[40px]">WHY CHOOSE ANYLINGO CHAT</h3>
@@ -301,12 +252,12 @@ const BrandingIntro = ({ title, shape }: Props) => {
           </div>
 
           {/* Center phones */}
-          <div className="relative z-10 flex items-center justify-center">
+          <div className="relative z-10 flex items-center justify-center gap-4 lg:gap-0">
             <div className="transform -rotate-6 scale-95">
-              <Image src="/assets/imgs/brand/phone-left.png" alt="phone left" width={260} height={520} className="rounded-2xl shadow-2xl" />
+              <Image src="/assets/imgs/brand/tilted phone.jpg" alt="phone left" width={280} height={560} className="rounded-3xl shadow-2xl" />
             </div>
-            <div className="transform rotate-6 scale-100 -ml-8">
-              <Image src="/assets/imgs/brand/phone-right.png" alt="phone right" width={260} height={520} className="rounded-2xl shadow-2xl" />
+            <div className="transform rotate-6 scale-100 -ml-6 lg:-ml-12">
+              <Image src="/assets/imgs/brand/tilted phone.jpg" alt="phone right" width={280} height={560} className="rounded-3xl shadow-2xl" />
             </div>
           </div>
 
@@ -327,6 +278,63 @@ const BrandingIntro = ({ title, shape }: Props) => {
                 <h5 className="font-semibold">SUPPORTS 70+ LANGUAGES</h5>
                 <p className="text-sm text-white/90 mt-2">Reliable assistance whenever you need it.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* ====== NEW: Key Features (dipto copy) - NOW APPEARS SECOND ====== */}
+    <section className="bg-[#ebffec] text-emerald-900 py-16 lg:py-24 mt-32 lg:mt-40 relative z-20 !-mt-0">
+      <div className="container">
+        <div className="text-center relative">
+          {/* dipto pill behind title */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -top-6 z-0">
+            <div className="w-[280px] h-12 bg-emerald-100 rounded-l-full" aria-hidden />
+          </div>
+
+          <h3 className="font-instrument font-semibold text-[34px] lg:text-[40px] relative z-10">Our Key Features</h3>
+          <p className="max-w-3xl mx-auto mt-3 text-sm lg:text-base text-emerald-800/90">
+            Our Key Features Are Designed To Break Language Barriers And Make Communication Effortless. From Real-Time Translation To AI-Powered Chat And Voice Cloning, AnyLingo Gives You The Tools To Connect With Confidence - Anytime, Anywhere.
+          </p>
+        </div>
+
+        <div className="mt-12 lg:mt-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+            {/* Card 1 */}
+            <div className="rounded-[12px] bg-white border-2 border-emerald-200 p-4 flex flex-col aspect-square justify-start hover:bg-[#065F46] hover:border-[#065F46] hover:text-white transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-emerald-50 hover:bg-emerald-600/50 flex items-center justify-center flex-shrink-0 transition-colors">
+                <span className="text-emerald-700 hover:text-white text-2xl font-bold transition-colors">◎</span>
+              </div>
+              <h4 className="mt-3 text-2xl lg:text-4xl font-bold leading-snug text-emerald-900 hover:text-white transition-colors">Bio-Directional Communication</h4>
+              <p className="mt-2 text-lg lg:text-xl text-emerald-700 hover:text-white/95 leading-relaxed transition-colors">Enjoy Seamless Two-Way Conversations Without Barriers.</p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="rounded-[12px] bg-white border-2 border-emerald-200 p-4 flex flex-col aspect-square justify-start hover:bg-[#065F46] hover:border-[#065F46] hover:text-white transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-emerald-50 hover:bg-emerald-600/50 flex items-center justify-center flex-shrink-0 transition-colors">
+                <span className="text-emerald-700 hover:text-white text-2xl font-bold transition-colors">◎</span>
+              </div>
+              <h4 className="mt-3 text-2xl lg:text-4xl font-bold text-emerald-900 hover:text-white leading-snug transition-colors">Smooth Multilingual Conversations</h4>
+              <p className="mt-2 text-lg lg:text-xl text-emerald-700 hover:text-white/95 leading-relaxed transition-colors">Communicate Effortlessly Across Multiple Languages.</p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="rounded-[12px] bg-white border-2 border-emerald-200 p-4 flex flex-col aspect-square justify-start hover:bg-[#065F46] hover:border-[#065F46] hover:text-white transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-emerald-50 hover:bg-emerald-600/50 flex items-center justify-center flex-shrink-0 transition-colors">
+                <span className="text-emerald-700 hover:text-white text-2xl font-bold transition-colors">◎</span>
+              </div>
+              <h4 className="mt-3 text-2xl lg:text-4xl font-bold text-emerald-900 hover:text-white leading-snug transition-colors">Instant Message Translation</h4>
+              <p className="mt-2 text-lg lg:text-xl text-emerald-700 hover:text-white/95 leading-relaxed transition-colors">Get Fast, Accurate Translations Right As You Chat.</p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="rounded-[12px] bg-white border-2 border-emerald-200 p-4 flex flex-col aspect-square justify-start hover:bg-[#065F46] hover:border-[#065F46] hover:text-white transition-all duration-300 cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-emerald-50 hover:bg-emerald-600/50 flex items-center justify-center flex-shrink-0 transition-colors">
+                <span className="text-emerald-700 hover:text-white text-2xl font-bold transition-colors">◎</span>
+              </div>
+              <h4 className="mt-3 text-2xl lg:text-4xl font-bold text-emerald-900 hover:text-white leading-snug transition-colors">Voice Cloning & Audio Sharing</h4>
+              <p className="mt-2 text-lg lg:text-xl text-emerald-700 hover:text-white/95 leading-relaxed transition-colors">Speak In Any Language Using Your Own Voice And Share It Instantly.</p>
             </div>
           </div>
         </div>
