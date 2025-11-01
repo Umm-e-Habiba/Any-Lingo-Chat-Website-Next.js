@@ -26,10 +26,19 @@ const MainSectionTitle = ({
       ) : (
         <h2
           className={cn(
-            "font-instrument font-semibold text-[28px] mt-[-5px] sm:text-[30px] sm:mt-[-8px] md:text-[36px] md:mt-[-10px] lg:text-[40px] lg:mt-[-12px] xl:text-[60px] xl:mt-[-20px] 2xl:text-[70px] 2xl:mt-[-24px]",
+            "text-[28px] mt-[-5px] sm:text-[30px] sm:mt-[-8px] md:text-[36px] md:mt-[-40px] lg:text-[40px] lg:mt-[-12px] xl:text-[60px] xl:mt-[-60px] 2xl:text-[70px] 2xl:mt-[-180px] 2xl:mb-[10px]",
             animation,
             className
           )}
+          style={{
+          fontFamily: "'ADLaM Display', sans-serif",
+          fontWeight: '400',
+          fontStyle: 'bold',
+          fontSize: '40px',
+          lineHeight: '47.25px',
+          letterSpacing: '0',
+          textTransform: 'uppercase',
+  }}
         >
           {title}
         </h2>

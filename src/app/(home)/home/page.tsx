@@ -38,7 +38,7 @@ const Branding = () => {
       />
       <RefreshGsap />
       <BrandingHero {...hero} />
-  <BrandingIntro {...process} />
+      <BrandingIntro {...process} />
       <BrandingFunFact {...funFact} />
       <BrandingScreenShot
         title="App Screenshots"

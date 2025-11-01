@@ -28,7 +28,7 @@ const BrandingHeader = ({ maxWidth, onlyDark = false }: Props) => {
       <header className="absolute top-0 inset-x-0 z-50">
         <div className={cn("container", maxWidth)}>
           <div className="flex h-[80px] 2xl:h-[100px] items-center gap-[20px] relative justify-between">
-            <div>
+            <div className="pl-[5px] sm:pl-[10px] md:pl-[20px] lg:pl-[40px]">
               <Logo light={!onlyDark && isLight} />
             </div>
             <div className="pos-center hidden xl:block">

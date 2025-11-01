@@ -20,6 +20,7 @@ export default function RootLayout({
           content="telephone=no, date=no, email=no, address=no"
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet"></link>
       </head>
       <body suppressHydrationWarning={true}>
         <Provider>

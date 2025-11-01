@@ -56,20 +56,20 @@ const BrandingFunFact = ({ title, shape1, shape2, value }: Props) => {
                 {value}
               </span>
             </div>
-            <p className="text-white text-2xl lg:text-4xl font-medium leading-relaxed">
+            <p className="text-white text-2xl lg:text-3xl font-medium leading-relaxed">
               Breaking barriers isn't easy, yet AnyLingo has delivered seamless translation in over 70 languages.
             </p>
           </div>
 
           {/* Right: Mobile Phone Mockup */}
-          <div className="flex justify-center flex-1">
-            <div className="relative w-full max-w-2xl h-full flex items-center">
+          <div className="flex justify-right flex-1">
+            <div className="relative w-full max-w-2xl h-full flex items-right">
               <Image
                 src="/assets/imgs/brand/Pre-comp 7_00240 1.png"
                 alt="AnyLingo app features"
                 width={1920}
                 height={2624}
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-[800px] h-[600px] md:w-[500px] md:h-[600px] lg:w-[400px] lg:h-[700px] xl:w-[300px] xl:h-[700px] 2xl:w-[400px] 2xl:h-[800px] drop-shadow-2xl"
                 priority
                 unoptimized
               />

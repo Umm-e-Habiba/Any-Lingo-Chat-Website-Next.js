@@ -127,10 +127,10 @@ const BrandingIntro = ({ title, shape }: Props) => {
     <section
       id="Intro"
       ref={pinElement}
-      className="scroll-mt-24 bg-[#ebffec] dark:bg-[#252525] section-spacing-top section-spacing-bottom relative z-20"
+      className=" bg-[#ebffec] dark:bg-[#252525] section-spacing-top section-spacing-bottom relative z-20"
     >
       <div ref={containerRef} className="container">
-        <div className=" main-section-spacing relative">
+        <div className="sm:mt-[10px] mt-[30px] md:mt-[100px] lg:mt-[100px] xl:mt-[100px] 2xl:mt-[120px] relative">
           {/* Background Shape removed per request */}
 
           {/* Decorative pale green 'dipto' behind the title (matches design) */}
@@ -429,56 +429,87 @@ const BrandingIntro = ({ title, shape }: Props) => {
   </section>
 
     {/* ====== NEW: Key Features (dipto copy) - NOW APPEARS SECOND ====== */}
-    <section className="bg-[#ebffec] text-emerald-900 py-16 lg:py-24 mt-32 lg:mt-40 relative z-20 !-mt-0">
+    <section className="Key-Features bg-[#ebffec] text-emerald-900 py-16 lg:py-24 mt-32 lg:mt-40 relative z-20 !-mt-0">
       <div className="container">
         <div className="text-center relative">
           {/* dipto pill behind title */}
-          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -top-6 z-0">
-            <div className="w-[280px] h-12 bg-emerald-100 rounded-l-full" aria-hidden />
-          </div>
+          
 
-          <h3 className="font-instrument font-semibold text-[34px] lg:text-[40px] relative z-10">Our Key Features</h3>
-          <p className="max-w-3xl mx-auto mt-3 text-sm lg:text-base text-emerald-800/90">
+          <h3 className=" text-[34px] lg:text-[40px] relative z-10"
+          style={{
+          fontFamily: "'ADLaM Display', sans-serif",
+          fontWeight: '400',
+          fontStyle: 'bold',
+          fontSize: '40px',
+          lineHeight: '47.25px',
+          letterSpacing: '0',
+          textTransform: 'uppercase',}}>Our Key Features</h3>
+          <p className="max-w-3xl mx-auto mt-3  " style={{
+    fontFamily: "'Lato', sans-serif",
+    fontWeight: 600,
+    fontStyle: 'normal',
+    fontSize: '14px',
+    lineHeight: '24px',
+    letterSpacing: '0',
+    textAlign: 'center',
+    textTransform: 'capitalize',
+  }}>
             Our Key Features Are Designed To Break Language Barriers And Make Communication Effortless. From Real-Time Translation To AI-Powered Chat And Voice Cloning, AnyLingo Gives You The Tools To Connect With Confidence - Anytime, Anywhere.
           </p>
         </div>
 
-        <div className="mt-12 lg:mt-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-            {/* Card 1 */}
-            <div className="rounded-[12px] bg-white border-2 border-emerald-200 p-4 flex flex-col aspect-square justify-start hover:bg-[#065F46] hover:border-[#065F46] transition-all duration-300 cursor-pointer group">
-              <div className="w-10 h-10 rounded-full bg-emerald-50 group-hover:bg-emerald-600/50 flex items-center justify-center flex-shrink-0 transition-colors">
-                <span className="text-emerald-700 group-hover:text-white text-2xl font-bold transition-colors">◎</span>
+        <div className="mt-12 lg:mt-16 lg:ml-[120px] lg:mr-[120px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+            {/* Card 1 - Default Hover State (Dark Green) */}
+            <div className="rounded-[24px] bg-[#065F46] border-2 border-[#065F46] p-6 flex flex-col justify-between min-h-[280px] hover:bg-[#065F46] hover:border-[#065F46] transition-all duration-300 cursor-pointer group">
+              <div className="w-12 h-12 rounded-full bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-[#FFD700]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                </svg>
               </div>
-              <h4 className="mt-3 text-2xl lg:text-4xl font-bold leading-snug text-emerald-900 group-hover:text-white transition-colors">Bio-Directional Communication</h4>
-              <p className="mt-2 text-lg lg:text-xl text-emerald-700 group-hover:text-white transition-colors">Enjoy Seamless Two-Way Conversations Without Barriers.</p>
+              <div>
+                <h4 className="mt-4 text-xl lg:text-2xl font-bold leading-tight text-white">Bio-Directional Communication</h4>
+                <p className="mt-2 text-sm lg:text-base text-white/90">Enjoy Seamless Two-Way Conversations Without Barriers.</p>
+              </div>
             </div>
 
             {/* Card 2 */}
-            <div className="rounded-[12px] bg-white border-2 border-emerald-200 p-4 flex flex-col aspect-square justify-start hover:bg-[#065F46] hover:border-[#065F46] transition-all duration-300 cursor-pointer group">
-              <div className="w-10 h-10 rounded-full bg-emerald-50 group-hover:bg-emerald-600/50 flex items-center justify-center flex-shrink-0 transition-colors">
-                <span className="text-emerald-700 group-hover:text-white text-2xl font-bold transition-colors">◎</span>
+            <div className="rounded-[24px] bg-white border-2 border-gray-200 p-6 flex flex-col justify-between min-h-[280px] hover:bg-[#065F46] hover:border-[#065F46] transition-all duration-300 cursor-pointer group">
+              <div className="w-12 h-12 rounded-full bg-gray-100 group-hover:bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 transition-colors">
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-[#FFD700] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                </svg>
               </div>
-              <h4 className="mt-3 text-2xl lg:text-4xl font-bold text-emerald-900 group-hover:text-white leading-snug transition-colors">Smooth Multilingual Conversations</h4>
-              <p className="mt-2 text-lg lg:text-xl text-emerald-700 group-hover:text-white transition-colors">Communicate Effortlessly Across Multiple Languages.</p>
+              <div>
+                <h4 className="mt-4 text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-white leading-tight transition-colors">Smooth Multilingual Conversations</h4>
+                <p className="mt-2 text-sm lg:text-base text-gray-700 group-hover:text-white/90 transition-colors">Communicate Effortlessly Across Multiple Languages.</p>
+              </div>
             </div>
 
             {/* Card 3 */}
-            <div className="rounded-[12px] bg-white border-2 border-emerald-200 p-4 flex flex-col aspect-square justify-start hover:bg-[#065F46] hover:border-[#065F46] transition-all duration-300 cursor-pointer group">
-              <div className="w-10 h-10 rounded-full bg-emerald-50 group-hover:bg-emerald-600/50 flex items-center justify-center flex-shrink-0 transition-colors">
-                <span className="text-emerald-700 group-hover:text-white text-2xl font-bold transition-colors">◎</span>
+            <div className="rounded-[24px] bg-white border-2 border-gray-200 p-6 flex flex-col justify-between min-h-[280px] hover:bg-[#065F46] hover:border-[#065F46] transition-all duration-300 cursor-pointer group">
+              <div className="w-12 h-12 rounded-full bg-gray-100 group-hover:bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 transition-colors">
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-[#FFD700] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
-              <h4 className="mt-3 text-2xl lg:text-4xl font-bold text-emerald-900 group-hover:text-white leading-snug transition-colors">Instant Message Translation</h4>
-              <p className="mt-2 text-lg lg:text-xl text-emerald-700 group-hover:text-white transition-colors">Get Fast, Accurate Translations Right As You Chat.</p>
+              <div>
+                <h4 className="mt-4 text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-white leading-tight transition-colors">Instant Message Translation</h4>
+                <p className="mt-2 text-sm lg:text-base text-gray-700 group-hover:text-white/90 transition-colors">Get Fast, Accurate Translations Right As You Chat.</p>
+              </div>
             </div>
 
             {/* Card 4 */}
-            <div className="rounded-[12px] bg-white border-2 border-emerald-200 p-4 flex flex-col aspect-square justify-start hover:bg-[#065F46] hover:border-[#065F46] transition-all duration-300 cursor-pointer group">
-              <div className="w-10 h-10 rounded-full bg-emerald-50 group-hover:bg-emerald-600/50 flex items-center justify-center flex-shrink-0 transition-colors">
-                <span className="text-emerald-700 group-hover:text-white text-2xl font-bold transition-colors">◎</span>
+            <div className="rounded-[24px] bg-white border-2 border-gray-200 p-6 flex flex-col justify-between min-h-[280px] hover:bg-[#065F46] hover:border-[#065F46] transition-all duration-300 cursor-pointer group">
+              <div className="w-12 h-12 rounded-full bg-gray-100 group-hover:bg-[#FFD700]/20 flex items-center justify-center flex-shrink-0 transition-colors">
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-[#FFD700] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                </svg>
               </div>
-              <h4 className="mt-3 text-2xl lg:text-4xl font-bold text-emerald-900 group-hover:text-white leading-snug transition-colors">Voice Cloning & Audio Sharing</h4>
-              <p className="mt-2 text-lg lg:text-xl text-emerald-700 group-hover:text-white transition-colors">Speak In Any Language Using Your Own Voice And Share It Instantly.</p>
+              <div>
+                <h4 className="mt-4 text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-white leading-tight transition-colors">Voice Cloning & Audio Sharing</h4>
+                <p className="mt-2 text-sm lg:text-base text-gray-700 group-hover:text-white/90 transition-colors">Speak In Any Language Using Your Own Voice And Share It Instantly.</p>
+              </div>
             </div>
           </div>
         </div>
