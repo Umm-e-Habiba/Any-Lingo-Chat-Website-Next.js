@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "@/styles/main.css";
 import Provider from "@/provider";
+import { adlamDisplay, lato } from "@/lib/fonts";
 
 export default function RootLayout({
   children,
@@ -8,7 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${adlamDisplay.variable} ${lato.variable}`}>
       <head>
         <meta
           name="viewport"

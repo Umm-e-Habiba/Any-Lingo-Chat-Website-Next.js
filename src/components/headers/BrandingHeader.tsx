@@ -33,11 +33,11 @@ const BrandingHeader = ({ maxWidth, onlyDark = false }: Props) => {
             </div>
             <div className="pos-center hidden xl:block">
               <Menu
-                textColor={cn("text-text", onlyDark && "text-text-fixed")}
+                textColor={cn("text-white font-bold", onlyDark && "text-white font-bold")}
               />
             </div>
             <div className="flex items-center gap-6">
-              <a href="/login" className="hidden md:block text-white/80 hover:text-white font-medium text-base transition-colors">
+              <a href="/login" className="hidden md:block text-black hover:text-gray-800 font-bold text-base transition-colors">
                 Login
               </a>
               <a href="/signup" className="hidden md:block px-8 py-3 bg-[#FF724B] hover:bg-[#ff5c2f] text-white font-medium text-base rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">

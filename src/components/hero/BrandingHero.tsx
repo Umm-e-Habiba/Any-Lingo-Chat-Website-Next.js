@@ -59,7 +59,7 @@ const BrandingHero = ({
           <div className="grid grid-cols-1 items-center gap-y-10 gap-x-16 lg:grid-cols-2">
 
             {/* LEFT: title + sub + buttons + downloads + video */}
-            <div className="has_fade_anim" data-fade-from="left">
+            <div className="has_fade_anim mt-8 md:mt-12 lg:mt-16" data-fade-from="left">
               {/* Top pill (optional): sub_title */}
               {sub_title && (
                 <span className="inline-flex items-center rounded-full px-4 py-2 text-sm font-medium bg-white/70 text-emerald-700 ring-1 ring-black/5 backdrop-blur mb-5">
@@ -155,29 +155,6 @@ const BrandingHero = ({
                   </div>
 
                   <p className="text-sm text-white/90">Trusted by 9K happy customers</p>
-                </div>
-              </div>
-
-              {/* Watch video button */}
-              <div>
-                <div className="relative rounded-[30px] overflow-hidden inline-block mt-8 md:mt-10 lg:mt-12">
-                  <Image
-                    src="/assets/imgs/hero/branding/lingo.png"
-                    className="w-full h-full"
-                    width={435}
-                    height={260}
-                    alt="image"
-                  />
-
-                  {/* centered button */}
-                  <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="h-[80px] w-[80px] border-[2px] text-[18px] rounded-full flex items-center justify-center pos-center cursor-pointer bg-white/20 backdrop-blur hover:bg-white/30 transition"
-                    aria-label="Play video"
-                  >
-                    
-                    <FaPlay className="text-text-fixed-2" />
-                  </button>
                 </div>
               </div>
 

@@ -86,7 +86,6 @@ const Footer1 = ({ footerNav }: Props) => {
                   placeholder="Your Email"
                   className="flex-1 px-5 py-3 rounded-full border-0 focus:outline-none text-black"
                 />
-                <button className="bg-[#29a63a] text-white px-7 py-3 rounded-full font-semibold transform hover:scale-105 transition-transform shadow-md">Subscribe</button>
               </form>
             </div>
           </div>

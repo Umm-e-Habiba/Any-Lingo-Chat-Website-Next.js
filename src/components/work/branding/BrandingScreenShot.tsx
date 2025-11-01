@@ -37,9 +37,10 @@ const BrandingScreenShot = ({ works, title, description, action_btn }: TBranding
     <section
       id="product"
       ref={pinElement}
-      className="scroll-mt-24 work-area section-item bg-background mb-[130px] mt-[-130px] 
+      className="scroll-mt-24 work-area section-item mb-[130px] mt-[-130px] 
       rounded-[30px_30px_0_0] lg:rounded-[50px_50px_0_0] xl:rounded-[80px_80px_0_0] 
       relative z-10 overflow-hidden"
+      style={{ backgroundColor: '#e0ffe9' }}
     >
       <div ref={containerRef} className="container">
         <div className="main-section-spacing ">
@@ -71,49 +72,43 @@ const BrandingScreenShot = ({ works, title, description, action_btn }: TBranding
               </div>
 
               {/* Screenshot Slider */}
-
-
             <Swiper
-  modules={[EffectCoverflow, Navigation, Autoplay]}
-  effect="coverflow"
-  grabCursor={true}
-  centeredSlides={true}
-  slidesPerView="auto"
-  loop={true}
-  navigation
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-  }}
-  coverflowEffect={{
-    rotate: 0,
-    stretch: 0,
-    depth: 200,
-    modifier: 2,
-    slideShadows: false,
-  }}
-  className="relative"
->
-  {works.map((work, idx) => (
-    <SwiperSlide
-      key={idx}
-      className="!w-[240px] !h-[480px] flex justify-center"
-    >
-      <div className="relative w-full h-full">
-        <Image
-          src={work.image}
-          alt={`App screenshot ${idx + 1}`}
-          fill
-          className="object-cover rounded-2xl shadow-xl"
-        />
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
-
-
-
-
+              modules={[EffectCoverflow, Navigation, Autoplay]}
+              effect="coverflow"
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView="auto"
+              loop={true}
+              navigation
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 0,
+                depth: 200,
+                modifier: 2,
+                slideShadows: false,
+              }}
+              className="relative"
+            >
+              {works.map((work, idx) => (
+                <SwiperSlide
+                  key={idx}
+                  className="!w-[240px] !h-[480px] flex justify-center"
+                >
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={work.image}
+                      alt={`App screenshot ${idx + 1}`}
+                      fill
+                      className="object-cover rounded-2xl shadow-xl"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
             </div>
 
 

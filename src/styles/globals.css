@@ -6,6 +6,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 @layer base {
+  /* Apply Lato to body text */
+  body {
+    font-family: var(--font-lato), 'Lato', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Apply ADLaM Display to headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-adlam-display), 'ADLaM Display', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+  }
+
   /* SF Pro Display font faces */
   @font-face {
     font-family: 'SF Pro Display';
@@ -147,6 +158,16 @@
 
 
 
+}
+
+@layer components {
+  .font-adlam {
+    font-family: var(--font-adlam-display), 'ADLaM Display', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-lato {
+    font-family: var(--font-lato), 'Lato', system-ui, -apple-system, sans-serif;
+  }
 }
 
 @layer base {
@@ -361,6 +382,11 @@
 
   footer {
     @apply rounded-[20px];
+    position: relative !important;
+    z-index: 100 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 

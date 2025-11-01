@@ -31,12 +31,26 @@ const BrandingFunFact = ({ title, shape1, shape2, value }: Props) => {
   return (
     <section
       ref={pinElement}
-      className="relative py-32 lg:py-48 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 overflow-hidden"
+      className="relative py-32 lg:py-48 overflow-hidden"
     >
-      <div ref={containerRef} className="container">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center justify-center">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/assets/imgs/brand/breaking barriers bg.jpg"
+          alt="breaking barriers background"
+          fill
+          className="object-cover blur-sm scale-125"
+          style={{
+            objectPosition: 'center 30%'
+          }}
+          unoptimized
+        />
+      </div>
+
+      <div ref={containerRef} className="container relative z-10">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-center justify-center px-4">
           {/* Left: Content - Centered */}
-          <div className="max-w-2xl text-center flex-1">
+          <div className="max-w-2xl text-center flex-1 flex flex-col items-center">
             <div className="text-9xl lg:text-10xl font-bold text-white mb-12">
               <span data-count={value} className="has_count_anim">
                 {value}
@@ -47,15 +61,15 @@ const BrandingFunFact = ({ title, shape1, shape2, value }: Props) => {
             </p>
           </div>
 
-          {/* Right: Mobile Phone Mockup - Full Size */}
-          <div className="flex justify-center lg:justify-end flex-1">
-            <div className="relative w-full h-full flex items-center justify-end">
+          {/* Right: Mobile Phone Mockup */}
+          <div className="flex justify-center flex-1">
+            <div className="relative w-full max-w-2xl h-full flex items-center">
               <Image
                 src="/assets/imgs/brand/Pre-comp 7_00240 1.png"
                 alt="AnyLingo app features"
                 width={1920}
                 height={2624}
-                className="w-full max-w-full h-auto drop-shadow-2xl"
+                className="w-full h-auto drop-shadow-2xl"
                 priority
                 unoptimized
               />
