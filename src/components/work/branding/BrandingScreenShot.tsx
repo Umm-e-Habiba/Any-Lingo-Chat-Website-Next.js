@@ -52,14 +52,23 @@ const BrandingScreenShot = ({ works, title, description, action_btn }: TBranding
           />
 
           {/* Short descriptive paragraph under title */}
-          <p className="text-center text-[#164e24] max-w-[920px] mx-auto mt-4 text-[18px]">
+          <p className="text-center text-[#164e24] max-w-[920px] mx-auto mt-4 text-[18px]" style={{
+            fontFamily: "'Lato', sans-serif",
+            fontWeight: 600,
+            fontStyle: 'normal',
+            fontSize: '20px',
+            lineHeight: '24px',
+            letterSpacing: '0',
+            textAlign: 'center',
+            
+          }}>
             From instant Translations To Smooth Conversations, Our App Screenshots Showcase The Powerful Features That Keep You Connected Across Languages.
           </p>
           
           
 
-          {/* Screenshot Slider with Mockup */}
-          <div className="relative max-w-6xl mx-auto mt-10" style={{marginTop:"120px"}}>
+           {/* Screenshot Slider with Mockup */}
+           <div className="relative max-w-6xl mx-auto mt-10" style={{marginTop:"120px"}}>
               {/* Phone Mockup Overlay */}
               <div className="absolute top-1/2 left-1/2 w-[350px] h-[525px] 
                               -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">

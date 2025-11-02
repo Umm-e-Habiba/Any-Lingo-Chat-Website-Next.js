@@ -18,8 +18,8 @@ const Footer1 = ({ footerNav }: Props) => {
   const { site_info, footer_info, social } = siteConfig;
 
   return (
-    <div className="inner-container large">
-      <footer className="footer_area bg-[#ebffec] px-[15px] lg:px-[45px]">
+    <div className="large">
+      <footer className="footer_area z-10 bg-[#ebffec] " style={{ background: "linear-gradient(to bottom, rgba(235, 255, 236, 5), rgba(235, 255, 236, 1))" }}>
         <div className="inner-container">
           <div className="footer_area_inner grid gap-y-[30px] gap-x-[30px] justify-between overflow-hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 py-[40px]">
             {/* Left: logo + contact + brand text */}
@@ -32,10 +32,19 @@ const Footer1 = ({ footerNav }: Props) => {
                   customHeight={40}
                   className="!h-[34px] !w-auto"
                 />
-                <span className="font-semibold text-black text-xl">AnyLingo</span>
+                <span className="font-semibold  text-xl"
+                style={{
+                  fontFamily: "'Lato', sans-serif",
+                  fontWeight: 900,
+                  fontStyle: 'normal',
+                  fontSize: '16px',
+                  lineHeight: '100%',
+                  letterSpacing: '0',
+                  color: '#3A9343'
+                }}>AnyLingo</span>
               </div>
               <ul className="mt-4 text-black/80">
-                <li className="mb-3">{footer_info?.email || "Help@Frybix.Com"}</li>
+                <li className="mb-3">{footer_info?.email || "help@frybix.com"}</li>
                 <li className="mb-3">{footer_info?.mobile || "+1 234 456 678 89"}</li>
               </ul>
             </div>

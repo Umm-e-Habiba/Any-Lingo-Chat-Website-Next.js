@@ -2,6 +2,7 @@ import { getMainPage, getAllPages } from "@/lib/helper/contentConverter";
 
 import BrandingHero from "@/components/hero/BrandingHero";
 import BrandingScreenShot from "@/components/work/branding/BrandingScreenShot";
+import AppScreenshotsDisplay from "@/components/work/branding/AppScreenshotsDisplay";
 import BrandingFunFact from "@/components/funFact/branding/BrandingFunFact";
 import BrandingProcess from "@/components/process/branding/BrandingProcess";
 import BrandingIntro from "@/components/process/branding/BrandingIntro";
@@ -40,23 +41,11 @@ const Branding = () => {
       <BrandingHero {...hero} />
       <BrandingIntro {...process} />
       <BrandingFunFact {...funFact} />
-      <BrandingScreenShot
-        title="App Screenshots"
-        description="Any Lingo — Chat and translate with real-time,
-                      bi-directional messaging in any language. Stay
-                      connected worldwide with instant translations,
-                      secure chats, and voice cloning."
-        action_btn={{ label: "Download Now", link: "/download" }}
-        works={[
-          { id: 1, image: "/assets/imgs/brand/screenshots/img1.PNG" },
-          { id: 2, image: "/assets/imgs/brand/screenshots/img2.PNG" },
-          { id: 3, image: "/assets/imgs/brand/screenshots/img3.PNG" },
-        ]}
-      />
-      
-      <BrandingImage {...image} />
       
       
+      
+      
+      <AppScreenshotsDisplay />
       
       <Cta1 {...cta} />
     </main>

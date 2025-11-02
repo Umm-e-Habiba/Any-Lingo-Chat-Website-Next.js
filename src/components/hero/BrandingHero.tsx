@@ -70,7 +70,7 @@ const BrandingHero = ({
               {/* Big title */}
               <h1
                 className={cn(
-                  "has_char_anim branding-hero-title font-display text-white uppercase",
+                  "has_char_anim branding-hero-title font-display text-white ",
                   "text-[16px] leading-[1.25] tracking-tight mt-10 mb-0",                  // mobile - even smaller
                   "xs:text-[24px] xs:leading-[1.2]",          // extra small
                   "sm:text-[16px] sm:leading-[1.1] sm:tracking-[-0.5px]",  // small screens
@@ -82,6 +82,14 @@ const BrandingHero = ({
                     "xxl:text-[80px] 2xl:mt-0 2xl:mb-[-6px] 2xl:max-w-[900px]"
                 )}
                 dangerouslySetInnerHTML={convertWithBrSpan(title, "no-animate")}
+                style={{
+                  fontFamily: "'ADLaM Display', sans-serif",
+                  fontWeight: 400,
+                  fontStyle: 'normal',
+                  fontSize: '60px',
+                  lineHeight: '65px',
+                  letterSpacing: '-2px',
+                }}
               />
 
 

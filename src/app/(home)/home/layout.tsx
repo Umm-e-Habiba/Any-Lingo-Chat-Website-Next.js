@@ -1,6 +1,6 @@
 import React from "react";
 import BrandingHeader from "@/components/headers/BrandingHeader";
-import Footer1 from "@/components/footer/Footer1";
+import Footer7 from "@/components/footer/Footer7";
 import navigation from "@/config/navigation.json";
 import ScrollSmootherComponent from "@/components/tools/ScrollSmoother";
 
@@ -22,7 +22,7 @@ const Layout = ({
         <div id="smooth-content">
           <BrandingHeader onlyDark />
           <div>{children}</div>
-          <Footer1 footerNav={navigation.footer1} />
+          <Footer7 />
         </div>
       </div>
     </div>

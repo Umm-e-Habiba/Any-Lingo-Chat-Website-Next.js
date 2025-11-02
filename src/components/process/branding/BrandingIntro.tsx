@@ -212,7 +212,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
     </section>
     
   {/* ====== 'WHY CHOOSE ANYLINGO CHAT' SECTION - EXACT DIPTO COPY ====== */}
-  <section className="text-white py-16 lg:py-24 relative overflow-hidden z-30">
+  <section className="text-white py-16 lg:py-24 relative overflow-hidden z-30 ">
     {/* Background Image */}
     <div className="absolute inset-0 -z-10">
       <Image
@@ -224,17 +224,35 @@ const BrandingIntro = ({ title, shape }: Props) => {
       />
     </div>
 
-    <div className="container relative z-10">
+    <div className="container relative z-10 ">
       {/* Header */}
       <div className="text-center mb-12 lg:mb-16">
-        <h2 className="text-3xl lg:text-5xl font-bold mb-4 uppercase">WHY CHOOSE ANYLINGO CHAT</h2>
-        <p className="max-w-3xl mx-auto text-base lg:text-lg text-white/90 leading-relaxed">
+        <h2 className="text-3xl lg:text-5xl mb-4 " style={{
+          fontFamily: "'ADLaM Display', sans-serif",
+          fontWeight: '400',
+          fontStyle: 'bold',
+          fontSize: '40px',
+          lineHeight: '47.25px',
+          letterSpacing: '0',
+          textTransform: 'uppercase',
+        }}>WHY CHOOSE ANYLINGO CHAT</h2>
+        <p className="max-w-3xl mx-auto leading-relaxed" style={{
+          fontFamily: "'Lato', sans-serif",
+          fontWeight: 500,
+          fontStyle: 'normal',
+          fontSize: '18px',
+          lineHeight: '24px',
+          letterSpacing: '0',
+          textAlign: 'center',
+          
+          color: '#ffffff',
+        }}>
           AnyLingo Chat is more than just translation—it's your gateway to meaningful connections across cultures. From instant messages to voice chat, everything is designed to help you communicate confidently.
         </p>
       </div>
 
       {/* Main Content Layout */}
-      <div className="relative">
+      <div className="relative ">
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-12 gap-8 items-center">
           {/* Left Column - 3 Cards */}
@@ -242,7 +260,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
             {/* Card 1 - Chat Translation */}
             <div className="bg-emerald-400/30 backdrop-blur-sm rounded-3xl p-6 text-right relative">
               {/* Connecting line to phone - Top Left */}
-              <div className="absolute left-full top-1/2 -translate-y-1/2 w-[200%] h-[2px] pointer-events-none">
+              <div className="absolute left-full top-1/2 -translate-y-1/2 w-[80%] h-[2px] pointer-events-none">
                 <svg className="absolute left-0 top-0 w-full h-full" style={{ overflow: 'visible' }}>
                   <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" opacity="0.6"/>
                   <circle cx="0" cy="0" r="6" fill="white" opacity="0.8"/>
@@ -262,7 +280,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
             {/* Card 2 - Voice Clone Sharing */}
             <div className="bg-emerald-400/30 backdrop-blur-sm rounded-3xl p-6 text-right relative">
               {/* Connecting line to phone - Middle Left */}
-              <div className="absolute left-full top-1/2 -translate-y-1/2 w-[200%] h-[2px] pointer-events-none">
+              <div className="absolute left-full top-1/2 -translate-y-1/2 w-[80%] h-[2px] pointer-events-none">
                 <svg className="absolute left-0 top-0 w-full h-full" style={{ overflow: 'visible' }}>
                   <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" opacity="0.6"/>
                   <circle cx="0" cy="0" r="6" fill="white" opacity="0.8"/>
@@ -283,7 +301,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
             {/* Card 3 - Generate Messages */}
             <div className="bg-emerald-400/30 backdrop-blur-sm rounded-3xl p-6 text-right relative">
               {/* Connecting line to phone - Bottom Left */}
-              <div className="absolute left-full top-1/2 -translate-y-1/2 w-[200%] h-[2px] pointer-events-none">
+              <div className="absolute left-full top-1/2 -translate-y-1/2 w-[80%] h-[2px] pointer-events-none">
                 <svg className="absolute left-0 top-0 w-full h-full" style={{ overflow: 'visible' }}>
                   <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" opacity="0.6"/>
                   <circle cx="0" cy="0" r="6" fill="white" opacity="0.8"/>
@@ -302,17 +320,17 @@ const BrandingIntro = ({ title, shape }: Props) => {
           </div>
 
           {/* Center Column - Phone Images */}
-          <div className="col-span-6 flex justify-center items-center relative px-8 z-20">
-            <div className="relative w-full h-[700px] flex items-center justify-center overflow-visible">
+          <div className="col-span-6 flex justify-center items-center relative px-8 z-20 ">
+            <div className="relative  h-[900px] flex items-center justify-center overflow-visible">
               {/* Single Centered Phone - Enlarged */}
-              <div className="relative w-[600px] z-20">
+              <div className="relative w-[1650px] h-[1000px] md:w-[1650px] md:h-[1000px] lg:w-[1650px] lg:h-[1000px] xl:w-[1650px] xl:h-[1000px] 2xl:w-[1650px] 2xl:h-[1000px] z-20">
                 <div className="relative">
                   <Image
                     src="/assets/imgs/brand/Pre-comp 1_00149 1 (1).png"
                     alt="AnyLingo Phone"
                     width={2000}
                     height={4000}
-                    className="w-full h-auto drop-shadow-2xl"
+                    className="w-[1650px] h-[1000px] md:w-[1650px] md:h-[1000px] lg:w-[1650px] lg:h-[1000px] xl:w-[1650px] xl:h-[1000px] 2xl:w-[1650px] 2xl:h-[1000px] drop-shadow-2xl"
                     unoptimized
                   />
                 </div>
@@ -325,7 +343,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
             {/* Card 1 - Real Time Translation */}
             <div className="bg-emerald-400/30 backdrop-blur-sm rounded-3xl p-6 relative">
               {/* Connecting line to phone - Top Right */}
-              <div className="absolute right-full top-1/2 -translate-y-1/2 w-[200%] h-[2px] pointer-events-none">
+              <div className="absolute right-full top-1/2 -translate-y-1/2 w-[80%] h-[2px] pointer-events-none">
                 <svg className="absolute right-0 top-0 w-full h-full" style={{ overflow: 'visible' }}>
                   <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" opacity="0.6"/>
                   <circle cx="100%" cy="0" r="6" fill="white" opacity="0.8"/>
@@ -345,7 +363,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
             {/* Card 2 - Voice Clone Generation */}
             <div className="bg-emerald-400/30 backdrop-blur-sm rounded-3xl p-6 relative">
               {/* Connecting line to phone - Middle Right */}
-              <div className="absolute right-full top-1/2 -translate-y-1/2 w-[200%] h-[2px] pointer-events-none">
+              <div className="absolute right-full top-1/2 -translate-y-1/2 w-[80%] h-[2px] pointer-events-none">
                 <svg className="absolute right-0 top-0 w-full h-full" style={{ overflow: 'visible' }}>
                   <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" opacity="0.6"/>
                   <circle cx="100%" cy="0" r="6" fill="white" opacity="0.8"/>
@@ -365,7 +383,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
             {/* Card 3 - Supports 70+ Languages */}
             <div className="bg-emerald-400/30 backdrop-blur-sm rounded-3xl p-6 relative">
               {/* Connecting line to phone - Bottom Right */}
-              <div className="absolute right-full top-1/2 -translate-y-1/2 w-[200%] h-[2px] pointer-events-none">
+              <div className="absolute right-full top-1/2 -translate-y-1/2 w-[80%] h-[2px] pointer-events-none">
                 <svg className="absolute right-0 top-0 w-full h-full" style={{ overflow: 'visible' }}>
                   <line x1="0" y1="0" x2="100%" y2="0" stroke="white" strokeWidth="2" opacity="0.6"/>
                   <circle cx="100%" cy="0" r="6" fill="white" opacity="0.8"/>
@@ -388,13 +406,13 @@ const BrandingIntro = ({ title, shape }: Props) => {
         <div className="lg:hidden space-y-6">
           {/* Phone Images for Mobile */}
           <div className="flex justify-center mb-8">
-            <div className="relative w-64 h-96">
+            <div className="relative w-[800px] h-[300px] md:h-[500px] ">
               <Image
-                src="/assets/imgs/brand/tilted.png"
+                src="/assets/imgs/brand/Pre-comp 1_00149 1 (1).png"
                 alt="AnyLingo Phone"
-                width={300}
+                width={600}
                 height={600}
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-[800px] h-[500px]drop-shadow-2xl"
                 unoptimized
               />
             </div>
@@ -452,7 +470,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
     lineHeight: '24px',
     letterSpacing: '0',
     textAlign: 'center',
-    textTransform: 'capitalize',
+    
   }}>
             Our Key Features Are Designed To Break Language Barriers And Make Communication Effortless. From Real-Time Translation To AI-Powered Chat And Voice Cloning, AnyLingo Gives You The Tools To Connect With Confidence - Anytime, Anywhere.
           </p>

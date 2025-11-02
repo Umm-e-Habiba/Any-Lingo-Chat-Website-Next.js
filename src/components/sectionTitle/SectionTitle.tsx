@@ -30,6 +30,16 @@ const SectionTitle = ({
             animation,
             className
           )}
+          style={{
+            fontFamily: "'ADLaM Display', sans-serif",
+            fontWeight: 400,
+            fontStyle: 'bold',
+            fontSize: '50px',
+            lineHeight: '38.4px',
+            letterSpacing: '0',
+            
+            verticalAlign: 'middle',
+          }}
         >
           {title}
         </h2>

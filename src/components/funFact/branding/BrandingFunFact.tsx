@@ -56,7 +56,17 @@ const BrandingFunFact = ({ title, shape1, shape2, value }: Props) => {
                 {value}
               </span>
             </div>
-            <p className="text-white text-2xl lg:text-3xl font-medium leading-relaxed">
+            <p className="leading-relaxed" style={{
+    fontFamily: "'ADLaM Display', sans-serif",
+    fontWeight: 200,
+    fontStyle: 'normal',
+    fontSize: '22px',
+    lineHeight: '100%',
+    letterSpacing: '0px',
+    textAlign: 'center',
+    verticalAlign: 'middle',
+    color: '#ffffff',
+  }}>
               Breaking barriers isn't easy, yet AnyLingo has delivered seamless translation in over 70 languages.
             </p>
           </div>
