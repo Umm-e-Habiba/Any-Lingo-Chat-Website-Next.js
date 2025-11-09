@@ -8,22 +8,22 @@
     {
       "id": 2,
       "name": "About",
-      "path": "/about"
+      "path": "#Intro"
     },
     {
       "id": 3,
-      "name": "Services",
-      "path": "/services"
+      "name": "Feature",
+      "path": "#feature"
     },
     {
       "id": 4,
-      "name": "Pricing",
-      "path": "/pricing"
+      "name": "Screenshots",
+      "path": "#screenshot"
     },
     {
       "id": 5,
-      "name": "Feature",
-      "path": "/feature"
+      "name": "Download",
+      "path": "#download"
     }
   ],
   "footer1": [

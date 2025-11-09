@@ -39,7 +39,8 @@ const AppScreenshotsDisplay = () => {
   ];
 
   return (
-    <section
+    <section 
+      id="screenshot"
       className="relative py-20 overflow-hidden mb-[30px]"
       style={{ backgroundColor: "#e0ffe9" }}
     >

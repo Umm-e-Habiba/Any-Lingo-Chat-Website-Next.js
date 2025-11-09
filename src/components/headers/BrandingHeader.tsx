@@ -37,12 +37,7 @@ const BrandingHeader = ({ maxWidth, onlyDark = false }: Props) => {
               />
             </div>
             <div className="flex items-center gap-6">
-              <a href="/login" className="hidden md:block text-black hover:text-gray-800 font-bold text-base transition-colors">
-                Login
-              </a>
-              <a href="/signup" className="hidden md:block px-8 py-3 bg-[#FF724B] hover:bg-[#ff5c2f] text-white font-medium text-base rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-                Sign Up
-              </a>
+              
               <SideNavModal />
             </div>
           </div>

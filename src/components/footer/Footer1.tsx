@@ -44,8 +44,8 @@ const Footer1 = ({ footerNav }: Props) => {
                 }}>AnyLingo</span>
               </div>
               <ul className="mt-4 text-black/80">
-                <li className="mb-3">{footer_info?.email || "help@frybix.com"}</li>
-                <li className="mb-3">{footer_info?.mobile || "+1 234 456 678 89"}</li>
+                <li className="mb-3">{footer_info?.email || "info@anylingo.app"}</li>
+                
               </ul>
             </div>
 

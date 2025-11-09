@@ -1,10 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import hasPinContent from "@/lib/animation/hasPinContent";
 import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import ButtonSwap from "../elements/button/ButtonSwap";
 import { ActionBtnType } from "@/types";
 
 type Props = {
@@ -16,8 +15,6 @@ type Props = {
 const Cta1 = ({ title, sub_title, action_btn }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
   const pinElement = useRef<HTMLDivElement>(null!);
-  const videoRef = useRef<HTMLVideoElement>(null!);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   useGSAP(
     () => {
@@ -27,19 +24,9 @@ const Cta1 = ({ title, sub_title, action_btn }: Props) => {
     { scope: containerRef }
   );
 
-  const handlePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
-    <section
+    <section 
+      id="download"
       ref={pinElement}
       className="cta_area main-section-style bg-[#2f8e3a] text-white overflow-hidden mb-[50px]" 
       
@@ -47,19 +34,7 @@ const Cta1 = ({ title, sub_title, action_btn }: Props) => {
       <div ref={containerRef} className="container">
         <div className="py-20 lg:py-28 text-center">
           <div className="max-w-[1000px] mx-auto">
-            <h2 className="text-[36px] sm:text-[48px] md:text-[56px] lg:text-[72px]  leading-[1.02] "
-            style={{
-              fontFamily: "'ADLaM Display', sans-serif",
-              fontWeight: 400,
-              fontStyle: 'normal',
-              fontSize: '75px',
-              lineHeight: '100%',
-              letterSpacing: '-2px',
-              textAlign: 'center',
-            }}
-            >
-              Love our Application?
-            </h2>
+            
             <h3 className="text-[36px] sm:text-[48px] md:text-[56px] lg:text-[72px]  leading-[1.02]  mt-3"
             style={{
               fontFamily: "'ADLaM Display', sans-serif",
@@ -70,7 +45,7 @@ const Cta1 = ({ title, sub_title, action_btn }: Props) => {
               letterSpacing: '-2px',
               textAlign: 'center',
             }}>
-              Download Now
+              Download Now!
             </h3>
 
             <p className="mt-4 text-[14px] sm:text-[16px] text-white/90 max-w-[760px] mx-auto"
@@ -152,45 +127,20 @@ const Cta1 = ({ title, sub_title, action_btn }: Props) => {
                   ))}
                 </div>
 
-                {/* Video Container */}
-                <div className="relative rounded-[30px] overflow-hidden shadow-2xl  mt-[50px] mb-[50px] z-10" style={{}}>
-                  {/* Video Element */}
-                  <video
-                    ref={videoRef}
-                    className="w-full h-auto block cursor-pointer"
-                    poster="/assets/imgs/hero/hero-3.jpg"
-                    onClick={handlePlayPause}
-                    onEnded={() => setIsPlaying(false)}
-                    preload="auto"
+                {/* YouTube Video Container */}
+                <div className="relative rounded-[30px] overflow-hidden shadow-2xl mt-[50px] mb-[50px] z-10">
+                  {/* YouTube iframe */}
+                  <iframe
+                    className="w-full h-auto block"
                     style={{
                       aspectRatio: "16/9",
-                      objectFit: "cover",
-                      backgroundColor: '#fff'
+                      border: "none"
                     }}
-                  >
-                    <source src="/assets/video/IMG_7055.MP4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-
-                  {/* Custom Play Button - Only show when not playing */}
-                  {!isPlaying && (
-                    <button 
-                      onClick={handlePlayPause}
-                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
-                                 w-28 h-28 rounded-full bg-white 
-                                 flex items-center justify-center 
-                                 shadow-2xl hover:scale-110 transition-transform duration-300
-                                 z-30"
-                      aria-label="Play video"
-                    >
-                      {/* Green Play Triangle */}
-                      <div className="w-0 h-0 ml-2
-                                      border-l-[24px] border-l-[#2f8e3a] 
-                                      border-t-[16px] border-t-transparent 
-                                      border-b-[16px] border-b-transparent">
-                      </div>
-                    </button>
-                  )}
+                    src="https://www.youtube.com/embed/PNmAB-AWK2g"
+                    title="AnyLingo Demo Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
 
                 {/* Top Right Corner Accents */}

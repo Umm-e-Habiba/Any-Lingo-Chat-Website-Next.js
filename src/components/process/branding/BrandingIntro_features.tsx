@@ -30,7 +30,7 @@ type Props = {
   }[];
 };
 
-const BrandingIntro = ({ title, shape }: Props) => {
+const BrandingIntro_features = ({ title, shape }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null!);
   const pinElement = useRef<HTMLDivElement>(null!);
 
@@ -105,75 +105,6 @@ const BrandingIntro = ({ title, shape }: Props) => {
       },
     }
   );
-  // Title slides up once
-  gsap.fromTo(
-    q(".section-title1"),
-    { y: 50, opacity: 0 },   // start lower + hidden
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: q(".section-title1"),
-        start: "top 80%",   // when 80% of viewport
-        toggleActions: "play none none none", // play only once
-      },
-    }
-  );
-
-  // WHY CHOOSE ANYLINGO CHAT Section Animations
-  // Left cards slide in from left
-  gsap.fromTo(
-    q(".why-card-left"),
-    { x: -150, opacity: 0 },
-    {
-      x: 0,
-      opacity: 1,
-      ease: "power2.out",
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: q(".why-phone-container"),
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    }
-  );
-
-  // Right cards slide in from right
-  gsap.fromTo(
-    q(".why-card-right"),
-    { x: 150, opacity: 0 },
-    {
-      x: 0,
-      opacity: 1,
-      ease: "power2.out",
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: q(".why-phone-container"),
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    }
-  );
-
-  // Center phone image slides up
-  gsap.fromTo(
-    q(".why-phone"),
-    { y: 200 },
-    {
-      y: -100,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: q(".why-phone-container"),
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    }
-  );
 }, { scope: containerRef });
 
 
@@ -193,119 +124,11 @@ const BrandingIntro = ({ title, shape }: Props) => {
 
   return (
     <>
-    <section
-      id="Intro"
-      ref={pinElement}
-      className=" bg-[#ebffec] dark:bg-[#252525] section-spacing-top section-spacing-bottom relative z-20"
-    >
-      <div ref={containerRef} className="container" >
-        <div className="sm:mt-[10px] mt-[30px] md:mt-[100px] lg:mt-[100px] xl:mt-[100px] 2xl:mt-[120px] relative">
-          {/* Background Shape removed per request */}
-
-          {/* Decorative pale green 'dipto' behind the title (matches design) */}
-          <div className="hidden lg:block absolute right-6 top-8 -translate-y-2 z-0 pointer-events-none">
-            <div className="w-[280px] h-12 bg-[#EDF9F1] rounded-l-full" aria-hidden="true" />
-          </div>
-
-          {/* Section Title */}
-          <MainSectionTitle title="ABOUT OUR APP" className="section-title text-center mx-auto z-10 relative" />
-
-          {/* Intro paragraph (centered) */}
-          <div className="mt-1 text-center">
-            <p className="max-w-3xl mx-auto text-base text-gray-700 dark:text-gray-300">
-              Powered by advanced AI, AnyLingo bridges communication gaps by blending smart translation
-              with natural conversation. Whether for travel, work, or learning, AnyLingo makes every
-              interaction smoother.
-            </p>
-          </div>
-
-          {/* ABOUT APP content: phone on left, features on right */}
-          <div className="mt-0 xl:mt-2 flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-6">
-            {/* Left: phone/gallery */}
-            <div className="lg:w-1/2 flex justify-center">
-              <div className="relative phone-container w-[300px] sm:w-[420px] lg:w-[700px]">
-                  <Image
-                    src="/assets/imgs/brand/phones-collage.png"
-                    alt="App preview"
-                    width={760}
-                    height={1100}
-                    className="w-full h-auto rounded-[18px]"
-                  />
-              </div>
-            </div>
-
-            {/* Right: features in two columns */}
-            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-lg text-emerald-800">Connecting People</h4>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Bringing individuals closer through seamless communication.</p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-lg text-emerald-800">Across Languages</h4>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Break barriers and chat effortlessly in any language.</p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-lg text-emerald-800">Generate Messages</h4>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Smart AI creates natural, context-aware responses.</p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold text-lg text-emerald-800">Real Time and Accurate Translation</h4>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Get instant, precise translations for smooth and natural conversations.</p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-lg text-emerald-800">Live Chat Support</h4>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Always-on help to guide your conversations.</p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-lg text-emerald-800">Voice Cloning <span className="ml-2 inline-block bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-xs">NEW</span></h4>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">Speak in any language with your own voice.</p>
-                </div>
-              </div>
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     
-  {/* ====== 'WHY CHOOSE ANYLINGO CHAT' SECTION - EXACT DIPTO COPY ====== */}
-  <section className="text-white py-16 lg:py-24 relative overflow-hidden z-30 lg:h-[900px] ">
-    {/* Background Video */}
-    <div ref={containerRef} className="container">
-    <div className="absolute inset-0 -z-10 overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-full object-cover"
-        style={{
-          objectFit: 'cover',
-          width: '100%',
-          height: '100%'
-        }}
-      >
-        <source src="/assets/video/IMG_7055.MP4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-   
-    </div>
-  </section>
 
     {/* ====== NEW: Key Features (dipto copy) - NOW APPEARS SECOND ====== */}
-    <section id="feature" className="Key-Features bg-[#ebffec] text-emerald-900 py-16 lg:py-24 mt-32 lg:mt-40 relative z-20 !-mt-0">
-      <div ref={containerRef} className="container">
+    <section className="Key-Features bg-[#ebffec] text-emerald-900 py-16 lg:py-24 mt-32 lg:mt-40 relative z-20 !-mt-0">
+      <div className="container">
         <div className="text-center relative">
           {/* dipto pill behind title */}
           
@@ -394,4 +217,4 @@ const BrandingIntro = ({ title, shape }: Props) => {
   );
 };
 
-export default BrandingIntro;
+export default BrandingIntro_features;

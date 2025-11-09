@@ -1,11 +1,10 @@
 "use client";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import hasPinContent from "@/lib/animation/hasPinContent";
-import hasImageReveal from "@/lib/animation/hasImageReveal";
-import hasCountAnim from "@/lib/animation/hasCountAnim";
-import hasFadeAnim from "@/lib/animation/hasFadeAnim";
-import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Props = {
   title: string;
@@ -15,77 +14,56 @@ type Props = {
 };
 
 const BrandingFunFact = ({ title, shape1, shape2, value }: Props) => {
-  const pinElement = useRef<HTMLDivElement>(null!);
-  const containerRef = useRef<HTMLDivElement>(null!);
+  const sectionRef = useRef<HTMLDivElement>(null!);
 
   useGSAP(
     () => {
-      hasPinContent(pinElement.current);
-      hasImageReveal();
-      hasCountAnim();
-      hasFadeAnim();
+      // Exact same sliding effect as BrandingIntro (phone-image animation)
+      gsap.fromTo(
+        sectionRef.current,
+        { y: 0 },
+        {
+          y: -100,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
     },
-    { scope: containerRef }
+    { scope: sectionRef }
   );
 
   return (
     <section
-      ref={pinElement}
-      className="relative py-32 lg:py-48 overflow-hidden"
+      ref={sectionRef}
+      className="relative overflow-hidden"
+      style={{height: '900px', marginBottom:'-100px'}}
     >
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <Image
-          src="/assets/imgs/brand/breaking barriers bg.jpg"
-          alt="breaking barriers background"
-          fill
-          className="object-cover blur-sm scale-125"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
           style={{
-            objectPosition: 'center 30%'
+            objectFit: 'cover',
+            width: '100%',
+            height: '100%'
           }}
-          unoptimized
-        />
+        >
+          <source src="/assets/video/IMG_7053.MP4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
-      <div ref={containerRef} className="container relative z-10">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-center justify-center px-4">
-          {/* Left: Content - Centered */}
-          <div className="max-w-2xl text-center flex-1 flex flex-col items-center">
-            <div className="text-9xl lg:text-10xl font-bold text-white mb-12">
-              <span data-count={value} className="has_count_anim">
-                {value}
-              </span>
-            </div>
-            <p className="leading-relaxed" style={{
-    fontFamily: "'ADLaM Display', sans-serif",
-    fontWeight: 200,
-    fontStyle: 'normal',
-    fontSize: '22px',
-    lineHeight: '100%',
-    letterSpacing: '0px',
-    textAlign: 'center',
-    verticalAlign: 'middle',
-    color: '#ffffff',
-  }}>
-              Breaking barriers isn't easy, yet AnyLingo has delivered seamless translation in over 70 languages.
-            </p>
-          </div>
-
-          {/* Right: Mobile Phone Mockup */}
-          <div className="flex justify-right flex-1">
-            <div className="relative w-full max-w-2xl h-full flex items-right">
-              <Image
-                src="/assets/imgs/brand/Pre-comp 7_00240 1.png"
-                alt="AnyLingo app features"
-                width={1920}
-                height={2624}
-                className="w-[800px] h-[600px] md:w-[500px] md:h-[600px] lg:w-[400px] lg:h-[700px] xl:w-[300px] xl:h-[700px] 2xl:w-[400px] 2xl:h-[800px] drop-shadow-2xl"
-                priority
-                unoptimized
-              />
-            </div>
-          </div>
-        </div>
+      <div className="container relative z-10 ">
+        {/* Empty container to maintain height */}
       </div>
     </section>
   );
