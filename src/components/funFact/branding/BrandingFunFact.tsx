@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -13,12 +13,26 @@ type Props = {
   value: number;
 };
 
-const BrandingFunFact = ({ title, shape1, shape2, value }: Props) => {
+const BrandingFunFact = ({ title }: Props) => {
   const sectionRef = useRef<HTMLDivElement>(null!);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [ratio, setRatio] = useState<number>(16 / 9); // fallback until metadata loads
+
+  // Measure natural video aspect ratio to size the section without cropping
+  const handleLoadedMetadata = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const w = v.videoWidth || 16;
+    const h = v.videoHeight || 9;
+    const r = w / h;
+    if (!Number.isNaN(r) && r > 0) setRatio(r);
+    // Ensure ScrollTrigger computes with the final height
+    ScrollTrigger.refresh();
+  };
 
   useGSAP(
     () => {
-      // Exact same sliding effect as BrandingIntro (phone-image animation)
+      // Parallax slide up (same as your original)
       gsap.fromTo(
         sectionRef.current,
         { y: 0 },
@@ -37,33 +51,42 @@ const BrandingFunFact = ({ title, shape1, shape2, value }: Props) => {
     { scope: sectionRef }
   );
 
+  // If fonts/layout change later, keep ScrollTrigger in sync
+  useEffect(() => {
+    const onResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden"
-      style={{height: '900px', marginBottom:'-100px'}}
+      aria-label={title || "Background video section"}
+      // Use aspect-ratio so the section matches the video's natural shape (no crop)
+      className="relative w-full h-[380px] sm:h-[450px] md:h-[515px] lg:h-[900px] mb-[-152px]  lg:mb-[-120px] mt-[-5px] lg:mt-[-5px] "
+      style={{ aspectRatio: ratio,  }}
     >
-      {/* Background Video */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* Background Video (no cropping) */}
+      <div className="absolute inset-0 -z-10 w-full h-full">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
-          style={{
-            objectFit: 'cover',
-            width: '100%',
-            height: '100%'
-          }}
+          onLoadedMetadata={handleLoadedMetadata}
+          // object-contain ensures the entire frame is visible; bg shows letterbox/pillarbox
+          className="w-full h-full object-contain bg-black"
+          style={{ width: "100%", height: "100%", }}
         >
           <source src="/assets/video/IMG_7053.MP4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      <div className="container relative z-10 ">
-        {/* Empty container to maintain height */}
+      {/* Content overlay (optional) */}
+      <div className="container relative z-10 pointer-events-none">
+        {/* Put overlay content here if needed */}
       </div>
     </section>
   );

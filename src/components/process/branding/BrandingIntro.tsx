@@ -278,7 +278,7 @@ const BrandingIntro = ({ title, shape }: Props) => {
     </section>
     
   {/* ====== 'WHY CHOOSE ANYLINGO CHAT' SECTION - EXACT DIPTO COPY ====== */}
-  <section className="text-white py-16 lg:py-24 relative overflow-hidden z-30 lg:h-[900px] ">
+  <section className="text-white py-16 lg:py-24 relative overflow-hidden z-30 h-[300px] md:h-[600px] lg:h-[900px] ">
     {/* Background Video */}
     <div ref={containerRef} className="container">
     <div className="absolute inset-0 -z-10 overflow-hidden">
