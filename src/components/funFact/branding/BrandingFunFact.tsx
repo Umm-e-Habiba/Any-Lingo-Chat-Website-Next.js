@@ -30,26 +30,7 @@ const BrandingFunFact = ({ title }: Props) => {
     ScrollTrigger.refresh();
   };
 
-  useGSAP(
-    () => {
-      // Parallax slide up (same as your original)
-      gsap.fromTo(
-        sectionRef.current,
-        { y: 0 },
-        {
-          y: -100,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-        }
-      );
-    },
-    { scope: sectionRef }
-  );
+  
 
   // If fonts/layout change later, keep ScrollTrigger in sync
   useEffect(() => {
@@ -63,7 +44,7 @@ const BrandingFunFact = ({ title }: Props) => {
       ref={sectionRef}
       aria-label={title || "Background video section"}
       // Use aspect-ratio so the section matches the video's natural shape (no crop)
-      className="relative w-full h-[380px] sm:h-[450px] md:h-[515px] lg:h-[900px] mb-[-152px]  lg:mb-[-120px] mt-[-5px] lg:mt-[-5px] "
+      className="relative w-full h-[240px] sm:h-[450px] md:h-[432px] lg:h-[810px] xl:h-[862px] mb-[0px]  lg:mb-[0px] mt-[0px] lg:mt-[0px] "
       style={{ aspectRatio: ratio,  }}
     >
       {/* Background Video (no cropping) */}

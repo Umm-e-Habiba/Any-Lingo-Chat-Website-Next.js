@@ -42,7 +42,7 @@ const AppScreenshotsDisplay = () => {
     <section 
       id="screenshot"
       className="relative py-20 overflow-hidden mb-[30px]"
-      style={{ backgroundColor: "#e0ffe9" }}
+      style={{ backgroundColor: "#e0ffe9",backgroundImage: "url('/assets/imgs/IMG_7416.PNG')",backgroundSize: "cover",backgroundPosition: "center" }}
     >
       <div className="container mx-auto px-12 mb-[50px]">
         {/* Title */}
@@ -59,7 +59,7 @@ const AppScreenshotsDisplay = () => {
             verticalAlign: 'middle',
           }}
         >
-          App Screenshots
+          App Preview
         </h2>
         
 
