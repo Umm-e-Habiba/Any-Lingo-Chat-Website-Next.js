@@ -38,17 +38,8 @@ const BrandingHero = ({
   useGSAP(() => { hasCharAnim(); }, { dependencies: [direction], scope: containerRef });
 
   return (
-    <section id="about" ref={pinElement} className="hero-area z-10 pb-[40px] sm:pb-[80px] md:pb-[100px] lg:pb-[130px] relative overflow-hidden" style={{top: '0px'}}>
-      {/* Hero background image */}
-      <div className="absolute w-full h-full -z-10 top-0 start-0 overflow-hidden">
-        <Image
-          src="/assets/imgs/hero/branding/BG.png"
-          alt="hero background"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+    <section id="about"  className="hero-area z-10 lg:h-[850px] lg:w-full w-full sm:w-full"  style={{top: '0px',paddingTop: '0px',backgroundImage: `url('/assets/imgs/IMG_7415.PNG')`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+      
 
       <div className="container px-4 sm:px-6 md:px-8">
         <div
@@ -56,7 +47,7 @@ const BrandingHero = ({
           className="pt-[60px] sm:pt-[100px] md:pt-[120px] lg:pt-[140px] xl:pt-[160px] 2xl:pt-[200px] pb-[20px] sm:pb-[50px] md:pb-[80px] lg:pb-[120px] xl:pb-[150px] 2xl:pb-[200px]"
         >
           {/* ====== HERO CONTENT ====== */}
-          <div className="grid grid-cols-1 items-center gap-y-6 sm:gap-y-8 md:gap-y-10 gap-x-8 md:gap-x-12 lg:gap-x-16 lg:grid-cols-2 pl-0 sm:pl-[10px] md:pl-[20px] lg:pl-[40px]">
+          <div className="grid grid-cols-2 items-center gap-y-6 sm:gap-y-8 md:gap-y-10 gap-x-8 md:gap-x-12 lg:gap-x-16 lg:grid-cols-2 pl-0 sm:pl-[10px] md:pl-[20px] lg:pl-[40px]">
 
             {/* LEFT: title + sub + buttons + downloads + video */}
             <div className="has_fade_anim mt-0 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16" data-fade-from="left">
@@ -175,12 +166,23 @@ const BrandingHero = ({
             </div>
 
             {/* RIGHT: removed — using hero background image instead (per design) */}
+            <div className="has_fade_anim relative w-[150px] h-[250px] mt-[150px] ml-[50px] md:w-[250px] md:h-[500px] lg:w-[300px] lg:h-[600px] xl:ml-[250px] xl:mt-[10px] lg:ml-[70px] lg:mt-[100px] inline-block text-right" >
+              <Image
+                src="/assets/imgs/mobile.png"
+                alt="App preview"
+                fill
+                className="object-contain"
+                priority
+                sizes="300px"
+                style={{verticalAlign: 'middle'}}
+              />
+            </div>
           </div>
           
         </div>
       </div>
 
-      <VideoModal link={video} isOpen={isOpen} close={closeDialog} />
+      
     </section>
   );
 };

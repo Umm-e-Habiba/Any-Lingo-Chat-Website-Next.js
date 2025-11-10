@@ -41,16 +41,16 @@ const BrandingFunFact = ({ title }: Props) => {
 
   return (
     <section
-      ref={sectionRef}
-      aria-label={title || "Background video section"}
+      
+      
       // Use aspect-ratio so the section matches the video's natural shape (no crop)
-      className="relative w-full h-[240px] sm:h-[450px] md:h-[432px] lg:h-[810px] xl:h-[862px] mb-[0px]  lg:mb-[0px] mt-[0px] lg:mt-[0px] "
-      style={{ aspectRatio: ratio,  }}
+      className="relative w-full h-[240px] sm:h-[450px] md:h-[432px] lg:h-[576px] xl:h-[812px] 2xl:h-[1440px] mb-[0px]  lg:mb-[0px] mt-[0px] lg:mt-[0px] "
+      
     >
       {/* Background Video (no cropping) */}
       <div className="absolute inset-0 -z-10 w-full h-full">
         <video
-          ref={videoRef}
+          
           autoPlay
           loop
           muted
