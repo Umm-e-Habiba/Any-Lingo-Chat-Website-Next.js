@@ -41,9 +41,7 @@ const BrandingFunFact = ({ title }: Props) => {
 
   return (
     <section
-      
-      
-      // Use aspect-ratio so the section matches the video's natural shape (no crop)
+    // Use aspect-ratio so the section matches the video's natural shape (no crop)
       className="relative w-full h-[240px] sm:h-[450px] md:h-[432px] lg:h-[576px] xl:h-[612px] 2xl:h-[1440px] mb-[0px]  lg:mb-[0px] mt-[0px] lg:mt-[0px] "
       
     >
