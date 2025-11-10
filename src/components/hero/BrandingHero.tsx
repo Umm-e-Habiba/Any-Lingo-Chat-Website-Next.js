@@ -38,7 +38,7 @@ const BrandingHero = ({
   useGSAP(() => { hasCharAnim(); }, { dependencies: [direction], scope: containerRef });
 
   return (
-    <section id="about" ref={pinElement} className="hero-area z-10 pb-[40px] sm:pb-[80px] md:pb-[100px] lg:pb-[130px] relative overflow-hidden">
+    <section id="about" ref={pinElement} className="hero-area z-10 pb-[40px] sm:pb-[80px] md:pb-[100px] lg:pb-[130px] relative overflow-hidden" style={{top: '0px'}}>
       {/* Hero background image */}
       <div className="absolute w-full h-full -z-10 top-0 start-0 overflow-hidden">
         <Image
