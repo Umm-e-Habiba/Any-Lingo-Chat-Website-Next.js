@@ -40,34 +40,30 @@ const BrandingFunFact = ({ title }: Props) => {
   }, []);
 
   return (
-    <section
-    // Use aspect-ratio so the section matches the video's natural shape (no crop)
-      className="relative w-full h-[240px] sm:h-[450px] md:h-[432px] lg:h-[576px] xl:h-[612px] 2xl:h-[1440px] mb-[0px]  lg:mb-[0px] mt-[0px] lg:mt-[0px] "
-      
-    >
-      {/* Background Video (no cropping) */}
-      <div className="absolute inset-0 -z-10 w-full h-full">
-        <video
-          
-          autoPlay
-          loop
-          muted
-          playsInline
-          onLoadedMetadata={handleLoadedMetadata}
-          // object-contain ensures the entire frame is visible; bg shows letterbox/pillarbox
-          className="w-full h-full object-contain bg-black"
-          style={{ width: "100%", height: "100%", }}
-        >
-          <source src="/assets/video/IMG_7053.MP4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+    <section className="text-white py-16 lg:py-24 relative overflow-hidden z-30 h-[250px] md:h-[400px] lg:h-[600px] xl:h-[800px] 2xl:h-[1150px] ">
+    {/* Background Video */}
+    <div className="container">
+    <div className="absolute inset-0 -z-10 overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover"
+        style={{
+          objectFit: 'cover',
+          width: '100%',
+          height: '100%'
+        }}
+      >
+        <source src="/assets/video/IMG_7053.MP4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
-      {/* Content overlay (optional) */}
-      <div className="container relative z-10 pointer-events-none">
-        {/* Put overlay content here if needed */}
-      </div>
-    </section>
+   
+    </div>
+  </section>
   );
 };
 
